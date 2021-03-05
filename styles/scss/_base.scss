@@ -7,6 +7,12 @@
   background: $main-light-grey;
 }
 
+.bg-gradient {
+  backdrop-filter: blur(3px);
+  background: url("/assets/images/gradient.jpg") no-repeat scroll;
+  background-size: 100%
+}
+
 // Text
 
 .text-black {

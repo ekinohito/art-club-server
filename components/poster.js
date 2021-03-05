@@ -5,7 +5,7 @@ export default function Poster({poster, height}) {
     console.log(poster)
     return (
         <img
-            src={`/data/posters/${poster.id}.jpg`}
+            src={`/data/posters/${poster.filename}`}
             width="auto"
             height={height}
             alt={poster.id}
