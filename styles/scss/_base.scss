@@ -4,13 +4,14 @@
 // Background
 
 .bg-light-grey {
+  position: relative;
   background: $main-light-grey;
 }
 
 .bg-gradient {
   backdrop-filter: blur(3px);
-  background: url("/assets/images/gradient.jpg") no-repeat scroll;
-  background-size: 100%
+  background: url("/assets/images/gradient.jpg");
+  @include parallax-bg()
 }
 
 // Text
