@@ -1,17 +1,12 @@
-import React, {useEffect, useState} from 'react';
-
+import React from 'react';
 import styles from './CompetenceSection.module.scss';
+import useSWR from "swr";
+import fetcher from "../../fetcher";
 
 
 export default function CompetenceSection() {
 
-    const [competence, setCompetence] = useState([]);
-    useEffect(() => {
-        fetch('/api/competence')
-            .then(res => res.json())
-            .then(competence => setCompetence(competence));
-    }, [fetch]);
-
+    const { data, error } = useSWR('/api/competence', fetcher);
     return (
         <div className="d-flex flex-column py-5 bg-gradient text-center">
             <div className="container">
@@ -20,8 +15,11 @@ export default function CompetenceSection() {
                 </span>
                 <div className="d-flex flex-md-row flex-column justify-content-around mt-5">
                     {
-                        competence.map(item =>
-                            <a className={`d-flex flex-column align-items-center mb-md-0 mb-4 text-decoration-none ${styles.competenceItem}`}>
+                        data?.map(item =>
+                            <a
+                                className={`d-flex flex-column align-items-center mb-md-0 mb-4 text-decoration-none ${styles.competenceItem}`}
+                                key={item.name}
+                            >
                                 <img
                                     src={`/data/competence/${item.iconName}`}
                                     height={70}
@@ -29,7 +27,7 @@ export default function CompetenceSection() {
                                     alt={item.name}
                                 />
                                 <span className="h4-text text-white mt-3">{item.name}</span>
-                            </a>
+                            </a >
                         )
                     }
                 </div>

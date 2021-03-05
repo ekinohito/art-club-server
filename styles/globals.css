@@ -1,10 +1,10 @@
 @font-face {
-  font-family: GilroyBold;
+  font-family: 'Gilroy Bold';
   src: url(/assets/fonts/Gilroy-Bold.ttf) format("truetype");
 }
 
 @font-face {
-  font-family: OpenSans;
+  font-family: 'Open Sans';
   src: url(/assets/fonts/OpenSans-Regular.ttf) format("truetype");
 }
 
@@ -12,7 +12,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: GilroyBold, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  font-family: GilroyBold, Roboto, BlinkMacSystemFont, Segoe UI, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 

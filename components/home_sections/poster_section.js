@@ -1,16 +1,12 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import Poster from "../poster";
 import Slider from "../slider";
+import useSWR from "swr";
+import fetcher from "../../fetcher";
 
 
 export default function PosterSection() {
-    const [posters, setPosters] = useState([]);
-
-    useEffect(() => {
-        fetch('/api/posters')
-            .then(res => res.json())
-            .then(posters => setPosters(posters));
-    }, [fetch]);
+    const {data, error} = useSWR('/api/posters', fetcher);
     return (
         <div className="d-flex flex-column bg-light-grey py-4" style={{zIndex: 999}}>
             <div className="container">
@@ -23,7 +19,9 @@ export default function PosterSection() {
                     </button>
                 </div>
                 <div>
-                    <Slider posters={posters}/>
+                    <Slider>
+                        {data?.map(poster => <Poster poster={poster} height={'auto'} key={poster.id}/>)}
+                    </Slider>
                 </div>
 
             </div>
