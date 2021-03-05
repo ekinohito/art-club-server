@@ -12,7 +12,7 @@ export default function TopSection() {
                     loop
                     muted
                     playsInline
-                    className="h-100 position-absolute"
+                    className="position-absolute"
                 />
                 <div
                     style={{
