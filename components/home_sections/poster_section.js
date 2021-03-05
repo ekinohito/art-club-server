@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import Poster from "../poster";
+import Slider from "../slider";
 
 
 export default function PosterSection() {
@@ -22,9 +23,7 @@ export default function PosterSection() {
                     </button>
                 </div>
                 <div>
-                    {
-                        posters.map(poster => <Poster poster={poster} height={300} key={poster.id}/>)
-                    }
+                    <Slider posters={posters}/>
                 </div>
 
             </div>
