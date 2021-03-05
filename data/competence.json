@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "name": "ART MEDIA",
+    "iconName": "1.png",
+    "href": "/"
+  },
+  {
+    "id": 2,
+    "name": "ART CLUB ACADEMY",
+    "iconName": "2.png",
+    "href": "/"
+  },
+  {
+    "id": 3,
+    "name": "PRODUCTION",
+    "iconName": "3.png",
+    "href": "/"
+  }
+]
