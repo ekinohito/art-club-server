@@ -16,14 +16,14 @@ export default function Slider({children}) {
                 selectedItem={1}
                 renderArrowPrev={(clickHandler, hasPrev, label)=>
                     <button
-                        class="control-arrow control-prev d-none d-md-block"
+                        className="control-arrow control-prev d-none d-md-block"
                         style={{borderRadius: '50px', top: "40%", bottom: "40%", left: "-75px", width: "80px", height: "80px"}}
                         onClick={clickHandler}
                     />
                 }
                 renderArrowNext={(clickHandler, hasPrev, label)=>
                 <button
-                    class="control-arrow control-next d-none d-md-block"
+                    className="control-arrow control-next d-none d-md-block"
                     style={{borderRadius: '50px', top: "40%", bottom: "40%", right: "-75px", width: "80px", height: "80px"}}
                     onClick={clickHandler}
                 />
