@@ -4,7 +4,7 @@ import styles from '../styles/Home.module.css';
 import TopSection from "../components/home_sections/top_section";
 import PosterSection from "../components/home_sections/poster_section";
 import CompetenceSection from "../components/home_sections/competence_section";
-import Description from "../components/description";
+import QuoteSection from "../components/home_sections/quote_section";
 
 export default function Home() {
     return (
@@ -15,15 +15,8 @@ export default function Home() {
             </Head>
             <TopSection/>
             <PosterSection/>
-            {/*<Description
-                image="/data/posters/1.jpg"
-                title="Первый Шаг"
-                description="Трансляция концерта трансляция концерта трансляция концерта
-                 трансляция концерта трансляция концерта
-                 трансляция концерта трансляция концерта
-                 трансляция концерта трансляция концерта
-                 трансляция концерта трансляция концерта"/>*/}
             <CompetenceSection/>
+            <QuoteSection/>
         </div>
     )
 }

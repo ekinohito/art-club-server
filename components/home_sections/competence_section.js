@@ -7,8 +7,8 @@ export default function CompetenceSection() {
 
     const { data, error } = useSWR('/api/competence');
     return (
-        <div className="d-flex flex-column py-5 bg-gradient text-center">
-            <div className="container">
+        <div className="py-5 bg-gradient text-center">
+            <div className="d-flex flex-column container">
                 <span className="h2-text text-white">
                     Чем мы занимаемся?
                 </span>
