@@ -5,7 +5,7 @@ import "react-responsive-carousel/lib/styles/carousel.min.css";
 export default function Slider({children}) {
     return (
         <div
-            className="px-0 px-md-5 nohidden">
+            className="px-0 px-md-5 not-hidden">
             <Carousel
                 centerMode
                 centerSlidePercentage={33}
