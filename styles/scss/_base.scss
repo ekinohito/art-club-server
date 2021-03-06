@@ -78,6 +78,10 @@
   @include small-text();
 }
 
+.nohidden .carousel.carousel-slider {
+  overflow: visible;
+}
+
 // Boxes
 
 .gradient-button {
