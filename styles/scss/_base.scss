@@ -14,6 +14,12 @@
   @include parallax-bg()
 }
 
+.bg-concert-photo {
+  backdrop-filter: blur(3px);
+  background: url("/assets/images/concert.jpg");
+  @include parallax-bg()
+}
+
 // Text
 
 .text-black {
@@ -70,4 +76,12 @@
 
 .small-text {
   @include small-text();
+}
+
+// Boxes
+
+.gradient-button {
+  @include main-button();
+  color: $main-white;
+  background: linear-gradient(90deg, #C13344 0%, #8F1675 100%);
 }

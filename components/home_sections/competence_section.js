@@ -1,12 +1,11 @@
 import React from 'react';
 import styles from './CompetenceSection.module.scss';
 import useSWR from "swr";
-import fetcher from "../../fetcher";
 
 
 export default function CompetenceSection() {
 
-    const { data, error } = useSWR('/api/competence', fetcher);
+    const { data, error } = useSWR('/api/competence');
     return (
         <div className="d-flex flex-column py-5 bg-gradient text-center">
             <div className="container">

@@ -1,5 +1,7 @@
 @import "variables";
 
+// Text
+
 @mixin gilroy-main() {
   font: {
     family: 'Gilroy Bold', sans-serif;
@@ -92,9 +94,19 @@
   line-height: 150%;
 }
 
+// Background
+
 @mixin parallax-bg {
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+// Boxes
+
+@mixin main-button {
+  @include body-text();
+  padding: 8px 16px;
+  border-radius: 5px;
 }
