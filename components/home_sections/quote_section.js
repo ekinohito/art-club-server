@@ -23,7 +23,7 @@ export default function QuoteSection({timeout = 5000}) {
     return (
         <div className="bg-concert-photo py-5">
             <div className="container">
-                <div className="h1-text-lg text-white py-5 text-center" style={{lineHeight: "125%"}}>
+                <div className="h2-text-lg h3-text text-white py-5 text-center" style={{lineHeight: "125%"}}>
                     {transitions.map(({item, props, key}) =>
                         <animated.div
                             key={key}

@@ -1,5 +1,4 @@
 @import "variables";
-
 @import "~bootstrap";
 
 @mixin add-breakpoints() {
@@ -53,62 +52,62 @@
 
 @mixin h3-text() {
   @include gilroy-main();
-  font-size: 32px!important;
+  font-size: 32px;
   line-height: 120%;
 }
 
 @mixin h4-text() {
   @include gilroy-main();
-  font-size: 24px!important;
+  font-size: 24px;
   line-height: 130%;
 }
 
 @mixin h5-text() {
   @include gilroy-main();
-  font-size: 20px!important;
+  font-size: 20px;
   line-height: 130%;
 }
 
 @mixin subtitle-text {
   @include gilroy-main();
-  font-size: 16px!important;
+  font-size: 16px;
   line-height: 150%;
 }
 
 @mixin body-text {
   @include open-sans-main();
-  font-size: 14px!important;
+  font-size: 14px;
   line-height: 150%;
 }
 
 @mixin body-text-big {
   @include open-sans-main();
-  font-size: 20px!important;
+  font-size: 20px;
   line-height: 150%;
 }
 
 @mixin span-text {
   @include gilroy-main();
-  font-size: 14px!important;
+  font-size: 14px;
   line-height: 100%;
 }
 
 @mixin span-big-text {
   @include gilroy-main();
-  font-size: 16px!important;
+  font-size: 16px;
   line-height: 100%;
 }
 
 @mixin table-text {
   @include open-sans-main();
-  font-size: 14px!important;
+  font-size: 14px;
   line-height: 150%;
   font-weight: 600;
 }
 
 @mixin small-text {
   @include open-sans-main();
-  font-size: 12px!important;
+  font-size: 12px;
   line-height: 150%;
 }
 

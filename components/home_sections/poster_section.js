@@ -7,9 +7,9 @@ import useSWR from "swr";
 export default function PosterSection() {
     const {data, error} = useSWR('/api/posters');
     return (
-        <div className="d-flex flex-column bg-light-grey py-4" style={{zIndex: 999}}>
-            <div className="container">
-                <div className="d-flex justify-content-between pb-4">
+        <div className="bg-light-grey py-4" style={{zIndex: 999}}>
+            <div className="container d-flex flex-column">
+                <div className="d-flex justify-content-between mb-4">
                     <span className="h3-text">
                         Афиша
                     </span>
