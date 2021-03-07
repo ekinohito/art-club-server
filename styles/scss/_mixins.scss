@@ -1,5 +1,23 @@
 @import "variables";
 
+@import "~bootstrap";
+
+@mixin add-breakpoints() {
+  @content;
+  @each $size in sm, md, lg, lg, xl, xxl {
+    &-#{$size} {
+      @include media-breakpoint-up($size) {
+        @content;
+      }
+    }
+  }
+  &-xs {
+    @include media-breakpoint-down(xs) {
+      @content;
+    }
+  }
+}
+
 // Text
 
 @mixin gilroy-main() {
@@ -23,74 +41,74 @@
 
 @mixin h1-text() {
   @include gilroy-main();
-  font-size: 44px;
+  font-size: 44px!important;
   line-height: 100%;
 }
 
 @mixin h2-text() {
   @include gilroy-main();
-  font-size: 38px;
+  font-size: 38px!important;
   line-height: 110%;
 }
 
 @mixin h3-text() {
   @include gilroy-main();
-  font-size: 32px;
+  font-size: 32px!important;
   line-height: 120%;
 }
 
 @mixin h4-text() {
   @include gilroy-main();
-  font-size: 24px;
+  font-size: 24px!important;
   line-height: 130%;
 }
 
 @mixin h5-text() {
   @include gilroy-main();
-  font-size: 20px;
+  font-size: 20px!important;
   line-height: 130%;
 }
 
 @mixin subtitle-text {
   @include gilroy-main();
-  font-size: 16px;
+  font-size: 16px!important;
   line-height: 150%;
 }
 
 @mixin body-text {
   @include open-sans-main();
-  font-size: 14px;
+  font-size: 14px!important;
   line-height: 150%;
 }
 
 @mixin body-text-big {
   @include open-sans-main();
-  font-size: 20px;
+  font-size: 20px!important;
   line-height: 150%;
 }
 
 @mixin span-text {
   @include gilroy-main();
-  font-size: 14px;
+  font-size: 14px!important;
   line-height: 100%;
 }
 
 @mixin span-big-text {
   @include gilroy-main();
-  font-size: 16px;
+  font-size: 16px!important;
   line-height: 100%;
 }
 
 @mixin table-text {
   @include open-sans-main();
-  font-size: 14px;
+  font-size: 14px!important;
   line-height: 150%;
   font-weight: 600;
 }
 
 @mixin small-text {
   @include open-sans-main();
-  font-size: 12px;
+  font-size: 12px!important;
   line-height: 150%;
 }
 
