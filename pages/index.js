@@ -6,6 +6,7 @@ import CompetenceSection from "../components/home_sections/competence_section";
 import QuoteSection from "../components/home_sections/quote_section";
 import Footer from "../components/footer";
 import PartnersSection from "../components/home_sections/partners_section";
+import ResidentSection from "../components/home_sections/resident_section";
 
 export default function Home() {
     return (
@@ -17,6 +18,7 @@ export default function Home() {
             <TopSection/>
             <PosterSection/>
             <CompetenceSection/>
+            <ResidentSection/>
             <QuoteSection/>
             <PartnersSection/>
             <Footer/>

@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "iconName": "1.jpg",
+    "name": "Виктор Кошик",
+    "href": "https://vk.com/id9100532"
+  },
+  {
+    "id": 2,
+    "iconName": "2.jpg",
+    "name": "Екатерина Селиванова",
+    "href": "https://vk.com/ekaterina.selivanova22"
+  },
+  {
+    "id": 3,
+    "iconName": "3.jpg",
+    "name": "Даниил Лисицинский",
+    "href": "https://vk.com/dlisitsinsky"
+  },
+  {
+    "id": 4,
+    "iconName": "1.jpg",
+    "name": "Виктор Кошик",
+    "href": "https://vk.com/id9100532"
+  },
+  {
+    "id": 5,
+    "iconName": "1.jpg",
+    "name": "Виктор Кошик",
+    "href": "https://vk.com/id9100532"
+  }
+]

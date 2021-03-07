@@ -1,0 +1,27 @@
+import React from 'react';
+import useSWR from "swr";
+import Slider from "../slider";
+
+export default function ResidentSection() {
+    const {data, error} = useSWR("/api/residents");
+
+    return (
+        <div className="bg-light-grey py-4">
+            <div className="container d-flex flex-column">
+                <span className="h2-text text-center mb-3">
+                    Наши резиденты
+                </span>
+                <Slider>
+                    {data?.map(resident =>
+                        <a
+                            href={resident.href}
+                            key={resident.id}
+                        >
+                            <img src={`/data/residents/${resident.iconName}`} alt={resident.name} style={{borderRadius: "50%"}}/>
+                        </a>
+                    )}
+                </Slider>
+            </div>
+        </div>
+    );
+}
