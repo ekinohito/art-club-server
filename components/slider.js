@@ -8,6 +8,9 @@ export default function Slider({children}) {
             className="px-0 px-md-5 not-hidden">
             <Carousel
                 centerMode
+                swipeable
+                emulateTouch
+                swipeScrollTolerance={5}
                 centerSlidePercentage={33}
                 showThumbs={false}
                 showStatus={false}
