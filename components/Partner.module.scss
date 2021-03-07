@@ -1,0 +1,17 @@
+.partnerLogo {
+  border-radius: 100%;
+  margin-bottom: 15px;
+  max-width: 130px;
+  max-height: 130px;
+  width: auto;
+  height: auto;
+}
+
+.partner {
+  &:hover {
+    opacity: .85;
+    cursor: pointer;
+  }
+  opacity: 1;
+  transition: opacity .25s;
+}
