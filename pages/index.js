@@ -5,6 +5,7 @@ import TopSection from "../components/home_sections/top_section";
 import PosterSection from "../components/home_sections/poster_section";
 import CompetenceSection from "../components/home_sections/competence_section";
 import QuoteSection from "../components/home_sections/quote_section";
+import FooterSection from "../components/home_sections/footer_section";
 
 export default function Home() {
     return (
@@ -17,6 +18,7 @@ export default function Home() {
             <PosterSection/>
             <CompetenceSection/>
             <QuoteSection/>
+            <FooterSection/>
         </div>
     )
 }
