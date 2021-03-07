@@ -1,8 +1,8 @@
 import React from 'react';
-import styles from './FooterSection.module.scss';
+import styles from './Footer.module.scss';
 
 
-export default function FooterSection() {
+export default function Footer() {
     return (
         <div className="content-block" id="footer">
             <div style={{padding: "0px 10%"}}>
