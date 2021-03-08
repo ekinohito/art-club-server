@@ -20,6 +20,10 @@
   @include parallax-bg()
 }
 
+.bg-dark-purple {
+  background: $dark-purple;
+}
+
 // Text
 
 .text-black {

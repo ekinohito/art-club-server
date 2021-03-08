@@ -1,44 +1,12 @@
-.adaptMap {
-  padding: 0 20px;
-}
-
 .footText{
-  position: relative;
-  padding-right: 15px;
-  padding-left: 15px;
-  float:left;
-  width: 50%;
-  bottom:30px;
-  font-size: 18px;
   a {
-    color: #FFF;
-    width: auto;
-    height: auto;
+    transition: color .3s;
+    color: #ffffff;
   }
-  a:hover {
-    color: #ec6ade;
-    width: auto;
-    height: auto;
+  &:hover {
+    a {
+      color: #ec6ade;
+    }
   }
-}
-
-.kSpecial {
-  margin-top: 4%
-}
-
-.h1 {
-  margin: 0 0 15px 0;
-  color: #363636; /*Цвет заголовков*/
-  font-family: 'Gilroy Bold', serif;
-}
-
-.footer {
-  background: #372449; /*Цвет нижнего поля*/
-  color: white;
-  max-height: 730px;
-}
-
-.contentBlock {
-  padding: 60px 0;
-  position: relative;
+  line-height: 150%;
 }

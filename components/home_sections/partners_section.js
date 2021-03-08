@@ -1,12 +1,11 @@
 import React from 'react';
 import Partner from "../partner";
-import styles from './PartnersSection.module.scss'
 
 export default function PartnersSection(props) {
     return (
-        <div className={`${styles.contentBlock} ${styles.partners} py-5 bg-gradient`}>
+        <div className="py-5 bg-gradient">
             <div className="container text-center">
-                <span className="h2-text text-white">
+                <span className="h2-text-lg h3-text text-white">
                     Наши друзья
                 </span>
                 <section className="block-body">
