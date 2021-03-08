@@ -7,6 +7,7 @@ import QuoteSection from "../components/home_sections/quote_section";
 import Footer from "../components/footer";
 import PartnersSection from "../components/home_sections/partners_section";
 import ResidentSection from "../components/home_sections/resident_section";
+import Header from "../components/header";
 
 export default function Home() {
     return (
@@ -15,6 +16,7 @@ export default function Home() {
             <Head>
                 <title>Art Club</title>
             </Head>
+            <Header/>
             <TopSection/>
             <PosterSection/>
             <CompetenceSection/>

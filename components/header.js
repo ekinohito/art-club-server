@@ -1,9 +1,56 @@
-import React from 'react';
+import React, {useCallback, useEffect, useRef, useState} from 'react';
 
-export default function Header() {
+export default function Header({animated = true}) {
+    const [transparent, setTransparent] = useState(animated);
+
+    const ref = useRef(null);
+
+    const scrollHandler = useCallback(() => {
+        if (ref.current.offsetHeight + window.pageYOffset > window.innerHeight)
+            setTransparent(false)
+        else
+            setTransparent(true)
+    }, [setTransparent]);
+
+    useEffect(() => {
+        window.addEventListener("scroll", scrollHandler);
+        return () => window.removeEventListener("scroll", scrollHandler);
+    }, []);
+
     return (
-        <div className="d-flex justify-content-between">
-            
+        <div
+            className={`d-flex justify-content-between px-4 fixed-top ${transparent ? "py-4" : " py-3 bg-header-gradient"}`}
+            ref={ref}
+            style={{
+                transition: "padding .5s"
+            }}
+        >
+
+            <a
+                href="/"
+                style={{
+                    opacity: transparent ? 0 : 1,
+                    transition: "visibility .5s, opacity .5s",
+                    visibility: transparent ? "hidden" : "visible"
+                }}
+            >
+                <img
+                    src="/assets/icons/logo.png"
+                    alt="logo"
+                    width={35}
+                    height={35}
+                />
+            </a>
+
+
+            <button className="bg-transparent">
+                <img
+                    src="/assets/icons/menu.png"
+                    alt="menu"
+                    height={28}
+                    width={28}
+                />
+            </button>
         </div>
     )
 }

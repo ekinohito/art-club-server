@@ -24,6 +24,11 @@
   background: $dark-purple;
 }
 
+.bg-header-gradient {
+  background: linear-gradient(128deg, rgba(140,28,64,0.9) 16%, rgba(54,37,71,0.9) 80%);
+  backdrop-filter: blur(3px);
+}
+
 // Text
 
 .text-black {

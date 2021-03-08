@@ -14,7 +14,6 @@ export default function QuoteSection({timeout = 5000}) {
     })
 
     useEffect(() => {
-        console.log(quotes)
         const id = setTimeout(() => {
             setK(k => (k + 1) % quotes?.length);
 
