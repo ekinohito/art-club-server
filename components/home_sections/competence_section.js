@@ -1,5 +1,5 @@
 import React from 'react';
-import {useGetCompetence} from "../../hooks/request/useCompetence";
+import {useGetCompetence} from "../../hooks/requests/useCompetence";
 
 
 export default function CompetenceSection() {

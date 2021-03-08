@@ -1,7 +1,7 @@
 import React from 'react';
 import Poster from "../poster";
 import Slider from "../slider";
-import {useGetPosters} from "../../hooks/request/usePosters";
+import {useGetPosters} from "../../hooks/requests/usePosters";
 
 
 export default function PosterSection() {

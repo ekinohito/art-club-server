@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 
 import {useTransition, config, animated} from "react-spring";
-import {useGetQuotes} from "../../hooks/request/useQuotes";
+import {useGetQuotes} from "../../hooks/requests/useQuotes";
 
 export default function QuoteSection({timeout = 5000}) {
     const {quotes, error} = useGetQuotes();

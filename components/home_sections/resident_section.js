@@ -1,7 +1,7 @@
 import React from 'react';
 import useSWR from "swr";
 import Slider from "../slider";
-import {useGetResidents} from "../../hooks/request/useResidents";
+import {useGetResidents} from "../../hooks/requests/useResidents";
 
 export default function ResidentSection() {
     const {residents, error} = useGetResidents();
