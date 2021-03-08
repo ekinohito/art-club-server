@@ -1,11 +1,11 @@
 import React from 'react';
 import Poster from "../poster";
 import Slider from "../slider";
-import useSWR from "swr";
+import {useGetPosters} from "../../hooks/request/usePosters";
 
 
 export default function PosterSection() {
-    const {data, error} = useSWR('/api/posters');
+    const {posters, error} = useGetPosters();
     return (
         <div className="bg-light-grey py-5" style={{zIndex: 999}}>
             <div className="container d-flex flex-column">
@@ -19,7 +19,7 @@ export default function PosterSection() {
                 </div>
                 <div>
                     <Slider>
-                        {data?.map(poster => <Poster poster={poster} height={'auto'} key={poster.id}/>)}
+                        {posters?.map(poster => <Poster poster={poster} height={'auto'} key={poster.id}/>)}
                     </Slider>
                 </div>
 

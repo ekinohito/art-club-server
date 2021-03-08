@@ -1,22 +1,20 @@
 import React from 'react';
-import styles from './CompetenceSection.module.scss';
-import useSWR from "swr";
+import {useGetCompetence} from "../../hooks/request/useCompetence";
 
 
 export default function CompetenceSection() {
-
-    const { data, error } = useSWR('/api/competence');
+    const {competence, error} = useGetCompetence();
     return (
         <div className="py-5 bg-gradient text-center">
             <div className="d-flex flex-column container">
-                <span className="h2-text text-white">
+                <span className="h2-text-lg h3-text text-white">
                     Чем мы занимаемся?
                 </span>
                 <div className="d-flex flex-md-row flex-column justify-content-around mt-5">
                     {
-                        data?.map(item =>
+                        competence?.map(item =>
                             <a
-                                className={`d-flex flex-column align-items-center mb-md-0 mb-4 text-decoration-none ${styles.competenceItem}`}
+                                className="d-flex flex-column align-items-center mb-md-0 mb-4 text-decoration-none opacity85-on-hover"
                                 key={item.name}
                             >
                                 <img

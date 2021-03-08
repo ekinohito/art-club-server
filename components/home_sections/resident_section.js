@@ -1,9 +1,10 @@
 import React from 'react';
 import useSWR from "swr";
 import Slider from "../slider";
+import {useGetResidents} from "../../hooks/request/useResidents";
 
 export default function ResidentSection() {
-    const {data, error} = useSWR("/api/residents");
+    const {residents, error} = useGetResidents();
 
     return (
         <div className="bg-light-grey py-5">
@@ -12,7 +13,7 @@ export default function ResidentSection() {
                     Наши резиденты
                 </span>
                 <Slider>
-                    {data?.map(resident =>
+                    {residents?.map(resident =>
                         <a
                             key={resident.id}
                         >

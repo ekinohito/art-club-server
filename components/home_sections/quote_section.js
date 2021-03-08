@@ -1,9 +1,10 @@
 import React, {useEffect, useState} from 'react';
-import useSWR from "swr";
+
 import {useTransition, config, animated} from "react-spring";
+import {useGetQuotes} from "../../hooks/request/useQuotes";
 
 export default function QuoteSection({timeout = 5000}) {
-    const {data, error} = useSWR("/api/quotes");
+    const {quotes, error} = useGetQuotes();
     const [k, setK] = useState(0);
     const transitions = useTransition(k, k => k, {
         from: {opacity: 0},
@@ -13,12 +14,13 @@ export default function QuoteSection({timeout = 5000}) {
     })
 
     useEffect(() => {
+        console.log(quotes)
         const id = setTimeout(() => {
-            setK(k => (k + 1) % data.length);
+            setK(k => (k + 1) % quotes?.length);
 
         }, timeout);
         return () => clearTimeout(id);
-    }, [k, data])
+    }, [k, quotes])
 
     return (
         <div className="bg-concert-photo py-5">
@@ -30,7 +32,7 @@ export default function QuoteSection({timeout = 5000}) {
                             style={props}
                         >
                             <div className="h2-text-lg h3-text text-white py-5 text-center" style={{lineHeight: "125%"}}>
-                                "{data ? data[item] : null}"
+                                "{quotes ? quotes[item] : null}"
                             </div>
                         </animated.div>
                     )}
