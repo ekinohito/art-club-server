@@ -1,0 +1,46 @@
+.preview {
+  transform: initial;
+}
+
+.preview:hover {
+  transform: scale(2, 2);
+}
+
+.recentWork {
+  width: 100%;
+  padding-bottom: 27%;
+  display: table;
+  text-align: center;
+  vertical-align: middle;
+  padding-top: 27%;
+  background: #C3C9CC no-repeat center;
+  background-size: 100%;
+  position: relative;
+  margin-bottom: 30px;
+  border-radius: 20px;
+  transition: all 0.2s;
+}
+
+.recentWork::before {
+  background: rgba(72, 49, 93, 0.7);
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  content: '';
+  opacity: 0;
+  -o-transition: all .2s;
+  -ms-transition: all .2s;
+  -moz-transition: all .2s;
+  -webkit-transition: all .2s;
+  transition: all .2s;
+  border-radius: 20px;
+}
+
+.recentWork:hover {
+  background-size: 200%;
+  background-position: center;
+}
+
+
