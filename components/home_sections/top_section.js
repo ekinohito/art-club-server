@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function TopSection() {
     return (
-        <div className="d-flex justify-content-center align-items-center position-relative w-100 vh-100">
+        <div className="d-flex justify-content-center align-items-center position-relative w-100 vh-100 overflow-hidden">
                 <video
                     src="/assets/webm/animated-bg.webm"
                     autoPlay
