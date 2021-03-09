@@ -1,6 +1,7 @@
 import React from 'react';
 import Image from "next/image";
 
+import styles from "./TopSection.module.scss";
 
 export default function TopSection() {
     return (
@@ -17,12 +18,17 @@ export default function TopSection() {
                     style={{
                         zIndex: 99
                     }}
-                    className="mx-4"
+                    className="mx-4 d-flex flex-column align-items-center"
                 >
                     <img
                         src="/assets/images/top-section-image.png"
                         width="100%"
-                        alt="art club"/>
+                        alt="art club"
+                    />
+                    <a href="#poster">
+                        <img src="/assets/icons/arrow_down.png" alt="arrow" className={`mt-5 ${styles.arrow}`} width={50}/>
+                    </a>
+
                 </div>
 
         </div>
