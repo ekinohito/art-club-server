@@ -4,6 +4,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import {SWRConfig} from "swr";
 import React from "react";
 import fetcher from "../fetcher";
+import {NavigationProvider} from "../context/navigation";
+import Navigation from "../components/navigation";
 
 function MyApp({ Component, pageProps }) {
   return(
@@ -12,7 +14,11 @@ function MyApp({ Component, pageProps }) {
           fetcher
         }}
     >
-      <Component {...pageProps} />
+        <NavigationProvider>
+            <Component {...pageProps} />
+            <Navigation/>
+            <div id="modal-root"/>
+        </NavigationProvider>
     </SWRConfig>
   )
 

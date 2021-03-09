@@ -5,7 +5,7 @@ import styles from './Footer.module.scss';
 export default function Footer() {
     return (
 
-        <div className="bg-dark-purple py-5">
+        <div className="bg-dark-purple py-5" id="contacts">
             <div className="container d-flex flex-column">
                 <span className="text-center text-white h1-text-lg h2-text mb-5">
                     Контакты

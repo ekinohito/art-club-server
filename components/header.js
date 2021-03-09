@@ -1,8 +1,9 @@
 import React, {useCallback, useEffect, useRef, useState} from 'react';
+import {useNavigation} from "../context/navigation";
 
 export default function Header({animated = true}) {
     const [transparent, setTransparent] = useState(animated);
-
+    const {showNav, setShowNav} = useNavigation();
     const ref = useRef(null);
 
     const scrollHandler = useCallback(() => {
@@ -13,6 +14,8 @@ export default function Header({animated = true}) {
     }, [setTransparent]);
 
     useEffect(() => {
+        if (!animated) return;
+
         window.addEventListener("scroll", scrollHandler);
         return () => window.removeEventListener("scroll", scrollHandler);
     }, []);
@@ -22,7 +25,8 @@ export default function Header({animated = true}) {
             className={`d-flex justify-content-between px-4 fixed-top ${transparent ? "py-4" : " py-3 bg-header-gradient"}`}
             ref={ref}
             style={{
-                transition: "padding .5s"
+                transition: "padding .5s",
+                zIndex: 100
             }}
         >
 
@@ -42,15 +46,21 @@ export default function Header({animated = true}) {
                 />
             </a>
 
+            {
+                !showNav
+                    ?
+                    <button className="bg-transparent" onClick={() => setShowNav(true)}>
+                        <img
+                            src="/assets/icons/menu.png"
+                            alt="menu"
+                            height={28}
+                            width={28}
+                        />
+                    </button>
+                    :
+                    null
+            }
 
-            <button className="bg-transparent">
-                <img
-                    src="/assets/icons/menu.png"
-                    alt="menu"
-                    height={28}
-                    width={28}
-                />
-            </button>
         </div>
     )
 }

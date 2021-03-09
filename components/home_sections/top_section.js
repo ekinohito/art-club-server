@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export default function TopSection() {
     return (
-        <div className="d-flex justify-content-center align-items-center position-relative w-100 vh-100">
+        <div className="d-flex justify-content-center align-items-center position-relative w-100 vh-100" id="top">
                 <video
                     src="/assets/webm/animated-bg.webm"
                     autoPlay
@@ -15,7 +15,7 @@ export default function TopSection() {
                 />
                 <div
                     style={{
-                        zIndex: 999
+                        zIndex: 99
                     }}
                     className="mx-4"
                 >

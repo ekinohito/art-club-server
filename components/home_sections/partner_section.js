@@ -1,9 +1,9 @@
 import React from 'react';
 import Partner from "../partner";
 
-export default function PartnersSection(props) {
+export default function PartnerSection(props) {
     return (
-        <div className="py-5 bg-gradient">
+        <div className="py-5 bg-gradient" id="partner">
             <div className="container text-center">
                 <span className="h2-text-lg h3-text text-white">
                     Наши друзья

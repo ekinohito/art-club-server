@@ -5,7 +5,7 @@ import {useGetCompetence} from "../../hooks/requests/useCompetence";
 export default function CompetenceSection() {
     const {competence, error} = useGetCompetence();
     return (
-        <div className="py-5 bg-gradient text-center">
+        <div className="py-5 bg-gradient text-center" id="competence">
             <div className="d-flex flex-column container">
                 <span className="h2-text-lg h3-text text-white">
                     Чем мы занимаемся?

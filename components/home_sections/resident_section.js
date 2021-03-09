@@ -7,7 +7,7 @@ export default function ResidentSection() {
     const {residents, error} = useGetResidents();
 
     return (
-        <div className="bg-light-grey py-5">
+        <div className="bg-light-grey py-5" id="resident">
             <div className="container d-flex flex-column">
                 <span className="h2-text-lg h3-text text-center mb-4">
                     Наши резиденты
