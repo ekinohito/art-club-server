@@ -1,10 +1,11 @@
 import React from 'react';
 import Image from "next/image";
 
+import styles from "./TopSection.module.scss";
 
 export default function TopSection() {
     return (
-        <div className="d-flex justify-content-center align-items-center position-relative w-100 vh-100 overflow-hidden">
+        <div className="d-flex flex-column justify-content-center align-items-center position-relative w-100 vh-100 py-5" id="top">
                 <video
                     src="/assets/webm/animated-bg.webm"
                     autoPlay
@@ -15,15 +16,21 @@ export default function TopSection() {
                 />
                 <div
                     style={{
-                        zIndex: 999
+                        zIndex: 99
                     }}
-                    className="mx-4"
+                    className="mx-4 flex-grow-1 d-flex justify-content-center align-items-center"
                 >
                     <img
                         src="/assets/images/top-section-image.png"
                         width="100%"
-                        alt="art club"/>
+                        alt="art club"
+                    />
+
+
                 </div>
+                <a href="#poster">
+                    <img src="/assets/icons/arrow_down.png" alt="arrow" className={styles.arrow} width={50}/>
+                </a>
 
         </div>
     )
