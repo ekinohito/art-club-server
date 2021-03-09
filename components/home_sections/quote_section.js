@@ -2,6 +2,7 @@ import React, {useEffect, useState} from 'react';
 
 import {useTransition, config, animated} from "react-spring";
 import {useGetQuotes} from "../../hooks/requests/useQuotes";
+import MainColoredSection from "../../containers/main_colored_section";
 
 export default function QuoteSection({timeout = 5000}) {
     const {quotes, error} = useGetQuotes();
@@ -22,21 +23,19 @@ export default function QuoteSection({timeout = 5000}) {
     }, [k, quotes])
 
     return (
-        <div className="bg-concert-photo py-5">
-            <div className="container position-relative">
-
-                    {transitions.map(({item, props, key}) =>
-                        <animated.div
-                            key={key}
-                            style={props}
-                        >
-                            <div className="h2-text-lg h3-text text-white py-5 text-center" style={{lineHeight: "125%"}}>
-                                "{quotes ? quotes[item] : null}"
-                            </div>
-                        </animated.div>
-                    )}
-
+        <MainColoredSection bgClass="bg-concert-photo">
+            <div className="position-relative">
+                {transitions.map(({item, props, key}) =>
+                    <animated.div
+                        key={key}
+                        style={props}
+                    >
+                        <div className="h2-text-lg h3-text text-white py-5 text-center" style={{lineHeight: "125%"}}>
+                            "{quotes ? quotes[item] : null}"
+                        </div>
+                    </animated.div>
+                )}
             </div>
-        </div>
+        </MainColoredSection>
     )
 }

@@ -3,6 +3,10 @@
 
 // Background
 
+.bg-parallax {
+  @include parallax-bg();
+}
+
 .bg-light-grey {
   position: relative;
   background: $main-light-grey;

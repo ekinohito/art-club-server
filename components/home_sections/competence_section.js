@@ -1,13 +1,14 @@
 import React from 'react';
 import {useGetCompetence} from "../../hooks/requests/useCompetence";
+import MainColoredSection from "../../containers/main_colored_section";
 
 
 export default function CompetenceSection() {
     const {competence, error} = useGetCompetence();
     return (
-        <div className="py-5 bg-gradient text-center" id="competence">
-            <div className="d-flex flex-column container">
-                <span className="h2-text-lg h3-text text-white">
+        <div id="competence">
+            <MainColoredSection bgClass="bg-gradient">
+                <span className="h2-text-lg h3-text text-white text-center">
                     Чем мы занимаемся?
                 </span>
                 <div className="d-flex flex-md-row flex-column justify-content-around mt-5">
@@ -28,8 +29,7 @@ export default function CompetenceSection() {
                         )
                     }
                 </div>
-            </div>
-
+            </MainColoredSection>
         </div>
     );
 }

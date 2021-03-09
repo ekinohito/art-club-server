@@ -2,13 +2,14 @@ import React from 'react';
 import useSWR from "swr";
 import Slider from "../slider";
 import {useGetResidents} from "../../hooks/requests/useResidents";
+import MainColoredSection from "../../containers/main_colored_section";
 
 export default function ResidentSection() {
     const {residents, error} = useGetResidents();
 
     return (
-        <div className="bg-light-grey py-5" id="resident">
-            <div className="container d-flex flex-column">
+        <div id="resident">
+            <MainColoredSection bgClass="bg-light-grey">
                 <span className="h2-text-lg h3-text text-center mb-4">
                     Наши резиденты
                 </span>
@@ -24,7 +25,7 @@ export default function ResidentSection() {
                         </a>
                     )}
                 </Slider>
-            </div>
+            </MainColoredSection>
         </div>
     );
 }
