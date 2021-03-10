@@ -33,6 +33,7 @@ export default function Slider({children}) {
                 }>
                 {children}
             </Carousel>
+
         </div>
     )
 }

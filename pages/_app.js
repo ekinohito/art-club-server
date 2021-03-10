@@ -17,7 +17,6 @@ function MyApp({ Component, pageProps }) {
         <NavigationProvider>
             <Component {...pageProps} />
             <Navigation/>
-            <div id="modal-root"/>
         </NavigationProvider>
     </SWRConfig>
   )
