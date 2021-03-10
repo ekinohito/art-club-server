@@ -37,6 +37,10 @@
   background: rgba(44, 28, 59, 0.9);
 }
 
+.bg-modal {
+  background: rgba(76, 18, 78, 0.75);;
+}
+
 // Text
 
 .text-black {
@@ -143,7 +147,7 @@
     }
   }
   &:hover {
-    animation: gradient 2s ease infinite;
+    animation-duration: 2s;
   }
 }
 

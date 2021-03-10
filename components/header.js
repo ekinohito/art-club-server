@@ -3,7 +3,7 @@ import {useNavigation} from "../context/navigation";
 
 export default function Header({animated = true}) {
     const [transparent, setTransparent] = useState(animated);
-    const {showNav, setShowNav} = useNavigation();
+    const {showNav, openNav} = useNavigation();
     const ref = useRef(null);
 
     const scrollHandler = useCallback(() => {
@@ -49,7 +49,7 @@ export default function Header({animated = true}) {
             {
                 !showNav
                     ?
-                    <button className="bg-transparent" onClick={() => setShowNav(true)}>
+                    <button className="bg-transparent" onClick={() => openNav()}>
                         <img
                             src="/assets/icons/menu.png"
                             alt="menu"
