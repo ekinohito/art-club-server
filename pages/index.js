@@ -5,10 +5,11 @@ import PosterSection from "../components/home_sections/poster_section";
 import CompetenceSection from "../components/home_sections/competence_section";
 import QuoteSection from "../components/home_sections/quote_section";
 import Footer from "../components/footer";
-import PartnerSection from "../components/home_sections/partner_section";
+import PartnerSection from "../components/home_sections/partners_section";
 import ResidentSection from "../components/home_sections/resident_section";
 import Header from "../components/header";
 import GalleryPreview from "../components/gallery_preview";
+import GallerySection from "../components/home_sections/gallery_section";
 
 export default function Home() {
     return (
@@ -24,6 +25,7 @@ export default function Home() {
             <ResidentSection/>
             <QuoteSection/>
             <GalleryPreview preview="kasting2020.jpg" link="/">Кастинг 2020</GalleryPreview>
+            <GallerySection/>
             <PartnerSection/>
             <Footer/>
         </div>
