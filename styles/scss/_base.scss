@@ -130,7 +130,7 @@
   color: $main-white;
   background: linear-gradient(90deg, #C13344 0%, #8F1675 54.59%, #7E2ECF 87.57%);
   background-size: 400% 400%;
-  animation: gradient 15s ease infinite;
+  animation: gradient 7s ease infinite;
   @keyframes gradient {
     0% {
       background-position: 0 50%;
@@ -141,6 +141,9 @@
     100% {
       background-position: 0 50%;
     }
+  }
+  &:hover {
+    animation: gradient 2s ease infinite;
   }
 }
 
