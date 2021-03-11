@@ -38,7 +38,7 @@ export default function GallerySection(props) {
     ]
     return (
         <div id="gallery">
-            <div className="container">
+            <div className="container pt-5">
                 <span className="h2-text-lg h3-text text-black text-left mb1">
                 Галерея
                 </span>

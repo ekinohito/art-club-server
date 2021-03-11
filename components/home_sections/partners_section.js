@@ -2,7 +2,7 @@ import React from 'react';
 import Partner from "../partner";
 import MainColoredSection from "../../containers/main_colored_section";
 
-export default function PartnerSection(props) {
+export default function PartnersSection(props) {
     return (
         <div id="partner">
             <MainColoredSection bgClass="bg-gradient">
