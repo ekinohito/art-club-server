@@ -1,5 +1,20 @@
 [
   {
-
+    "id": 1,
+    "title": "Студенческий совет",
+    "image": "/assets/icons/studsov.jpg",
+    "link": "https://vk.com/studsovet_bmstu"
+  },
+  {
+    "id": 2,
+    "title": "МГТУ им. Н. Э. Баумана",
+    "image": "/assets/icons/gerb_mgtu.png",
+    "link": "https://www.bmstu.ru/"
+  },
+  {
+    "id": 3,
+    "title": "Профсоюз студентов МГТУ им. Н.Э. Баумана",
+    "image": "/assets/icons/profkom.jpg",
+    "link": "https://vk.com/profkom_bmstu"
   }
 ]
