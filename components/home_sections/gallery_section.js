@@ -1,41 +1,9 @@
 import React from 'react';
-import Partner from "../partner";
-import MainColoredSection from "../../containers/main_colored_section";
 import GalleryPreview from "../gallery_preview";
+import {useGetPreviews} from "../../hooks/requests/usePreviews";
 
 export default function GallerySection(props) {
-    const previews = [
-        {
-            link: '/',
-            preview: 'kasting2020.jpg',
-            text: 'KacTuHr'
-        },
-        {
-            link: '/',
-            preview: 'kasting2020.jpg',
-            text: 'KacTuHr'
-        },
-        {
-            link: '/',
-            preview: 'kasting2020.jpg',
-            text: 'KacTuHr'
-        },
-        {
-            link: '/',
-            preview: 'kasting2020.jpg',
-            text: 'KacTuHr'
-        },
-        {
-            link: '/',
-            preview: 'kasting2020.jpg',
-            text: 'KacTuHr'
-        },
-        {
-            link: '/',
-            preview: 'kasting2020.jpg',
-            text: 'KacTuHr'
-        },
-    ]
+    const {previews, error} = useGetPreviews()
     return (
         <div id="gallery">
             <div className="container pt-5">
@@ -44,7 +12,7 @@ export default function GallerySection(props) {
                 </span>
                 <div className="d-flex flex-wrap mt-4 justify-content-around">
                     {
-                        previews.map((value, index, array) =>
+                        previews?.map((value, index, array) =>
                             <GalleryPreview link={value.link} preview={value.preview} key={value.text}>{value.text}</GalleryPreview>
                         )
                     }
