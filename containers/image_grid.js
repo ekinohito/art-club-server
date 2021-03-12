@@ -3,7 +3,7 @@ import MainColoredSection from "./main_colored_section";
 
 export default function ImageGrid({title, children}) {
     return (
-        <MainColoredSection bgClass="bg-white"><span className="h3-text">
+        <MainColoredSection bgClass="bg-white mt-5"><span className="h3-text">
                 {title}
             </span>
             <div className="container d-flex flex-wrap my-4 justify-content-around">

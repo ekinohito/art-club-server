@@ -12,7 +12,7 @@ export default function Gallery() {
     const {previews, error} = useGetPreviews()
     return (
         <div className="d-flex flex-column overflow-hidden">
-            <Header/>
+            <Header animated={false}/>
             <ImageGrid title="Фотогалерея">{
                 previews?.map((value, index, array) =>
                     <GalleryPreview link={value.link} preview={value.preview} key={value.text}>{value.text}</GalleryPreview>

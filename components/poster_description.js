@@ -5,15 +5,24 @@ import Modal from "../containers/modal";
 export default function PosterDescription({show, closeModal, poster}) {
 
     return (
-        <Modal show={show}>
-            <div className="container bg-info p-3" style={{borderRadius: "30px"}}>
-                <div className="row">
-                    <div className="col-12 col-sm-5">
-                        <img src={poster.image} alt={poster.title} style={{display: "block", position: "relative", width: "100%", borderRadius: "20px"}}/>
-                    </div>
-                    <div className="col-12 col-sm-7">
-                        <h1 className="h1-text mt-3 mt-sm-0">{poster.title}</h1>
-                        <p className="body-text mt-3 pr-3">{poster.description}</p>
+        <Modal show={show} closeModal={closeModal}>
+            <div className="row h-100 justify-content-center">
+                <div className="col-md-9 col-12 d-flex flex-column justify-content-center">
+                    <div className="bg-light-grey p-4 my-4" style={{borderRadius: 10}}>
+                        <div className="d-flex">
+                            <img
+                                src={`/data/posters/${poster.iconName}`}
+                                alt={poster.id}
+                                height={300}
+                                style={{borderRadius: 10}}
+                            />
+                            <div className="flex-grow-1 d-flex flex-column text-center ml-4">
+                                <span className="h5-text mb-2">{poster.name}, {poster.date}</span>
+                                <div className="flex-grow-1 body-text-big" style={{wordBreak: "break-all"}}>
+                                    <span className="span-big-text">Описание:</span> {poster.description}
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

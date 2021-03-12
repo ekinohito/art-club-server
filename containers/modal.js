@@ -8,7 +8,7 @@ const ScrollLocker = () => {
     return null;
 }
 
-export default function Modal({children, show}) {
+export default function Modal({children, show, closeModal}) {
 
     const {opacity} = useSpring({
         opacity: show ? 1: 0,
@@ -19,9 +19,14 @@ export default function Modal({children, show}) {
             ?
         <Portal>
 
-            <animated.div className="fixed-top h-100 bg-modal" style={{opacity}}>
-                <div className="container d-flex justify-content-center align-items-center h-100">
+            <animated.div className="fixed-top h-100 bg-modal" style={{opacity}} onClick={() => closeModal()}>
+                <button onClick={() => {
+                    closeModal();
+                    console.log('123')
+                }}>123</button>
+                <div className="container h-100">
                     {children}
+
                 </div>
 
             </animated.div>
