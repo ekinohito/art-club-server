@@ -10,3 +10,7 @@ fs.readFile(path.join(__dirname, '../data/quotes.json'),
 db.deletePartners()
 fs.readFile(path.join(__dirname, '../data/partners.json'),
     (err, data) => JSON.parse(data.toString()).forEach(item => db.insertPartners(item)))
+
+db.deletePreviews()
+fs.readFile(path.join(__dirname, '../data/previews.json'),
+    (err, data) => JSON.parse(data.toString()).forEach(item => db.insertPreviews(item)))

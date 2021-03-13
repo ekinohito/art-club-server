@@ -1,60 +1,29 @@
 const sqlite3 = require('sqlite3').verbose();
-
-const createQuotesSQL = `
-    CREATE TABLE IF NOT EXISTS quotes
-    (
-        quote_id INTEGER PRIMARY KEY,
-        quote_text TEXT NOT NULL
-    )
-`
-
-const deleteQuotesSQL = `
-    DELETE FROM quotes
-`
-
-const insertQuotesSQL = `
-    INSERT INTO quotes(quote_text) VALUES (?) 
-`
-
-const selectQuotesSQL = `
-    SELECT * FROM quotes
-`
-
-const createPartnersSQL = `
-    CREATE TABLE IF NOT EXISTS partners
-    (
-        partner_id INTEGER PRIMARY KEY,
-        partner_title TEXT NOT NULL,
-        partner_image TEXT NOT NULL,
-        partner_link TEXT
-    )
-`
-
-const deletePartnersSQL = `
-    DELETE FROM partners
-`
-
-const insertPartnersSQL = `
-    INSERT INTO partners(partner_title, partner_image, partner_link) VALUES (?, ?, ?) 
-`
-
-const selectPartnersSQL = `
-    SELECT * FROM partners
-`
+const quotes = require('./sql/quotes')
+const partners = require('./sql/partners')
+const previews = require('./sql/previews')
 
 let db = new sqlite3.Database('./db.db');
-db.run(createQuotesSQL)
-db.run(createPartnersSQL)
+db.run(quotes.createQuotesSQL)
+db.run(partners.createPartnersSQL)
+db.run(previews.createPreviewsSQL)
 
 module.exports = {
-    deleteQuotes: () => db.run(deleteQuotesSQL),
+    deleteQuotes: () => db.run(quotes.deleteQuotesSQL),
     selectQuotes: () => new Promise((resolve) =>
-        db.all(selectQuotesSQL, (err, rows) => {resolve(rows)})
+        db.all(quotes.selectQuotesSQL, (err, rows) => {resolve(rows)})
     ),
-    insertQuotes: (quote) => db.run(insertQuotesSQL, [quote]),
-    deletePartners: () => db.run(deletePartnersSQL),
+    insertQuotes: (quote) => db.run(quotes.insertQuotesSQL, [quote]),
+
+    deletePartners: () => db.run(partners.deletePartnersSQL),
     selectPartners: () => new Promise((resolve) =>
-        db.all(selectPartnersSQL, (err, rows) => {resolve(rows)})
+        db.all(partners.selectPartnersSQL, (err, rows) => {resolve(rows)})
     ),
-    insertPartners: (partner) => db.run(insertPartnersSQL, [partner.title, partner.image, partner.link])
+    insertPartners: (partner) => db.run(partners.insertPartnersSQL, [partner.title, partner.image, partner.link]),
+
+    deletePreviews: () => db.run(previews.deletePreviewsSQL),
+    selectPreviews: () => new Promise((resolve) =>
+        db.all(previews.selectPreviewsSQL, (err, rows) => {resolve(rows)})
+    ),
+    insertPreviews: (preview) => db.run(previews.insertPreviewsSQL, [preview.text, preview.preview, preview.link]),
 }
