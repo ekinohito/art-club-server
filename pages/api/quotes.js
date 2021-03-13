@@ -1,9 +1,15 @@
-import quotes from "../../data/quotes.json";
+import quotes_base from "../../data/quotes.json";
+let quotes = quotes_base
+const db = require('../../db/db')
 
 export default (req, res) => {
     switch (req.method){
         case "GET":
-            res.status(200).json(quotes);
+            db.selectQuotes().then(result => res.status(200).json(result.map(quote => quote.quote_text)))
+            return;
+        case "POST":
+            db.insertQuotes(req.body)
+            res.status(200).json({"success": true})
             return;
     }
 }
