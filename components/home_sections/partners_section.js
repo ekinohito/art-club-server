@@ -13,7 +13,7 @@ export default function PartnersSection(props) {
                 </span>
                 <div className="d-flex flex-md-row flex-column justify-content-around mt-4">
                     {partners?.map((item) =>
-                        <Partner link={item.link} image={item.image}>
+                        <Partner link={item.link} image={item.image} key={item.id}>
                             {item.title}
                         </Partner>)}
                 </div>

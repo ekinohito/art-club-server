@@ -1,16 +1,18 @@
-import {useState} from "react";
-import {useEffect} from "react";
+import {useState, useCallback} from "react";
 
 export default function useModal() {
     const [show, setShow] = useState(false);
 
-    useEffect(() => {
-        console.log(show)
-    }, [show])
+    const closeModal = useCallback(() => {
+        setShow(false);
+    }, [setShow]);
+    const openModal = useCallback(() => {
+        setShow(true);
+    }, [setShow]);
 
     return {
         show,
-        closeModal: () => setShow(false),
-        openModal: () => setShow(true)
+        closeModal,
+        openModal
     }
 }
