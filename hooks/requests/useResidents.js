@@ -1,7 +1,7 @@
 import useSWR from "swr";
 
-const useGetResidents = () => {
-    const {data, error} = useSWR("/api/residents");
+const useGetResidents = (residents) => {
+    const {data, error} = useSWR("/api/residents", {initialData: residents});
 
     return {
         residents: data,

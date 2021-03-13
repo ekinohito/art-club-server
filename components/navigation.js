@@ -43,7 +43,6 @@ export default function Navigation() {
                             <Link
                                 href={section.href}
                                 key={index}
-
                             >
                                 <span
                                     className={`text-decoration-none px-3 py-2 subtitle-text ${styles.navItem}`}

@@ -1,7 +1,7 @@
 import useSWR from "swr";
 
-const useGetPartners = () => {
-    const {data, error} = useSWR('/api/partners');
+const useGetPartners = (partners) => {
+    const {data, error} = useSWR('/api/partners', {initialData: partners});
 
     return {
         partners: data,

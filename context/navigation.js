@@ -1,5 +1,4 @@
 import React from 'react';
-import {useState} from "react";
 import useModal from "../hooks/useModal";
 
 const NavigationContext = React.createContext();

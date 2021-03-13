@@ -1,7 +1,7 @@
 import useSWR from "swr";
 
-const useGetQuotes = () => {
-    const {data, error} = useSWR('/api/quotes');
+const useGetQuotes = (quotes) => {
+    const {data, error} = useSWR('/api/quotes', {initialData: quotes});
 
     return {
         quotes: data,

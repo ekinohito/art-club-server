@@ -8,10 +8,10 @@ import Footer from "../components/footer";
 import PartnersSection from "../components/home_sections/partners_section";
 import ResidentSection from "../components/home_sections/resident_section";
 import Header from "../components/header";
-import GalleryPreview from "../components/gallery_preview";
 import GallerySection from "../components/home_sections/gallery_section";
+import fetcher from "../fetcher";
 
-export default function Home() {
+export default function Home(props) {
     return (
 
         <div className="d-flex flex-column overflow-hidden">
@@ -20,13 +20,29 @@ export default function Home() {
             </Head>
             <Header/>
             <TopSection/>
-            <PosterSection/>
-            <CompetenceSection/>
-            <ResidentSection/>
-            <QuoteSection/>
-            <GallerySection/>
-            <PartnersSection/>
+            <PosterSection posters={props.posters}/>
+            <CompetenceSection competence={props.competence}/>
+            <ResidentSection residents={props.residents}/>
+            <QuoteSection quote={props.quotes}/>
+            <GallerySection previews={props.previews}/>
+            <PartnersSection partners={props.partners}/>
             <Footer/>
         </div>
     )
+}
+
+export async function getStaticProps(context) {
+    const url = 'http://localhost:3000';
+    const posters = await fetcher(url + '/api/posters');
+    const competence = await fetcher(url + '/api/competence');
+    const partners = await fetcher(url + '/api/partners');
+    const previews = await fetcher(url + '/api/previews');
+    const residents = await fetcher(url + '/api/residents');
+    const quotes = await fetcher(url + '/api/quotes');
+
+    return {
+        props: {
+            posters, competence, partners, previews, residents, quotes
+        },
+    }
 }

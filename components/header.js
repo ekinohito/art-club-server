@@ -11,7 +11,7 @@ export default function Header({animated = true}) {
             setTransparent(false)
         else
             setTransparent(true)
-    }, [setTransparent]);
+    }, [setTransparent, ref]);
 
     useEffect(() => {
         if (!animated) return;
