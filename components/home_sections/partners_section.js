@@ -4,7 +4,7 @@ import MainColoredSection from "../../containers/main_colored_section";
 import {useGetPartners} from "../../hooks/requests/usePartners";
 
 export default function PartnersSection(props) {
-    const {partners, error} = useGetPartners();
+    const {partners, error} = useGetPartners(props.partners);
     return (
         <div id="partner">
             <MainColoredSection bgClass="bg-gradient">
@@ -12,7 +12,7 @@ export default function PartnersSection(props) {
                 Наши друзья
                 </span>
                 <div className="d-flex flex-md-row flex-column justify-content-around mt-4">
-                    {partners?.map((item) =>
+                    {partners.map((item) =>
                         <Partner link={item.link} image={item.image} key={item.id}>
                             {item.title}
                         </Partner>)}

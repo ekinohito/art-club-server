@@ -4,8 +4,8 @@ import {useTransition, config, animated} from "react-spring";
 import {useGetQuotes} from "../../hooks/requests/useQuotes";
 import MainColoredSection from "../../containers/main_colored_section";
 
-export default function QuoteSection({timeout = 5000}) {
-    const {quotes, error} = useGetQuotes();
+export default function QuoteSection({timeout = 5000, ...props}) {
+    const {quotes, error} = useGetQuotes(props.quotes);
     const [k, setK] = useState(0);
     const transitions = useTransition(k, k => k, {
         from: {opacity: 0},
@@ -31,7 +31,7 @@ export default function QuoteSection({timeout = 5000}) {
                         style={props}
                     >
                         <div className="h2-text-lg h3-text text-white py-5 text-center" style={{lineHeight: "125%"}}>
-                            "{quotes ? quotes[item] : null}"
+                            "{quotes ? quotes[item]: null}"
                         </div>
                     </animated.div>
                 )}

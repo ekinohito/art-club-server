@@ -3,8 +3,8 @@ import {useGetCompetence} from "../../hooks/requests/useCompetence";
 import MainColoredSection from "../../containers/main_colored_section";
 
 
-export default function CompetenceSection() {
-    const {competence, error} = useGetCompetence();
+export default function CompetenceSection(props) {
+    const {competence, error} = useGetCompetence(props.competence);
     return (
         <div id="competence">
             <MainColoredSection bgClass="bg-gradient">
@@ -13,7 +13,7 @@ export default function CompetenceSection() {
                 </span>
                 <div className="d-flex flex-md-row flex-column justify-content-around mt-5">
                     {
-                        competence?.map(item =>
+                        competence.map(item =>
                             <a
                                 className="d-flex flex-column align-items-center mb-md-0 mb-4 text-decoration-none opacity85-on-hover"
                                 key={item.name}

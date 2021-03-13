@@ -4,8 +4,8 @@ import Slider from "../slider";
 import {useGetResidents} from "../../hooks/requests/useResidents";
 import MainColoredSection from "../../containers/main_colored_section";
 
-export default function ResidentSection() {
-    const {residents, error} = useGetResidents();
+export default function ResidentSection(props) {
+    const {residents, error} = useGetResidents(props.residents);
 
     return (
         <div id="resident">
@@ -14,7 +14,7 @@ export default function ResidentSection() {
                     Наши резиденты
                 </span>
                 <Slider>
-                    {residents?.map(resident =>
+                    {residents.map(resident =>
                         <a
                             key={resident.id}
                         >

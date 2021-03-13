@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import Portal from "../components/portal";
 import {useSpring, animated} from "react-spring";
 import useLockBodyScroll from "../hooks/useLockBodyScroll";
@@ -13,8 +13,6 @@ export default function Modal({children, show, closeModal}) {
     const {opacity} = useSpring({
         opacity: show ? 1: 0,
     });
-
-    // useEffect(() => closeModal(), [show])
 
     return (
         show

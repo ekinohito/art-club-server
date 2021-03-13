@@ -1,7 +1,7 @@
 import useSWR from "swr";
 
-const useGetPreviews = () => {
-    const {data, error} = useSWR('/api/previews');
+const useGetPreviews = (previews) => {
+    const {data, error} = useSWR('/api/previews', {initialData: previews});
 
     return {
         previews: data,
