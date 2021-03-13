@@ -20,7 +20,7 @@ export default function ResidentSection(props) {
                         >
                             <div
                                 className="px-3 py-1 bg-light-grey h-100">
-                                <img src={`/data/residents/${resident.iconName}`} alt={resident.name} style={{borderRadius: "50%"}}/>
+                                <img src={resident.iconName} alt={resident.name} style={{borderRadius: "50%"}}/>
                             </div>
                         </a>
                     )}
