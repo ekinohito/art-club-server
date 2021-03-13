@@ -9,6 +9,8 @@
   },
   "dependencies": {
     "bootstrap": "^4.6.0",
+    "formidable": "^1.2.2",
+    "formik": "^2.2.6",
     "next": "10.0.7",
     "prop-types": "^15.7.2",
     "react": "17.0.1",
