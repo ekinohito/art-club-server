@@ -14,7 +14,7 @@ export default function Poster({poster, height}) {
             onClick={openModal}
         >
             <img
-                src={`/data/posters/${poster.iconName}`}
+                src={`${poster.iconName}`}
                 width="auto"
                 height={height}
                 alt={poster.id}

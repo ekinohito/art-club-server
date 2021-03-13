@@ -1,42 +1,42 @@
 [
   {
     "id": 1,
-    "iconName": "1.jpg",
+    "iconName": "/data/posters/1.jpg",
     "name": "Кастинг на дебют",
     "date": "31.08.2020",
     "description": "Кастинг.Кастинг.Кастинг.Кастинг.Кастинг.Кастинг.Кастинг.Кастинг.Кастинг.Кастинг.Кастинг.Кастинг.Кастинг.Кастинг.Кастинг"
   },
   {
     "id": 2,
-    "iconName": "2.jpg",
+    "iconName": "/data/posters/2.jpg",
     "name": "",
     "date": "",
     "description": ""
   },
   {
     "id": 3,
-    "iconName": "3.jpg",
+    "iconName": "/data/posters/3.jpg",
     "name": "",
     "date": "",
     "description": ""
   },
   {
     "id": 4,
-    "iconName": "4.jpg",
+    "iconName": "/data/posters/4.jpg",
     "name": "",
     "date": "",
     "description": ""
   },
   {
     "id": 5,
-    "iconName": "5.jpg",
+    "iconName": "/data/posters/5.jpg",
     "name": "",
     "date": "",
     "description": ""
   },
   {
     "id": 6,
-    "iconName": "6.jpg",
+    "iconName": "/data/posters/6.jpg",
     "name": "",
     "date": "",
     "description": ""

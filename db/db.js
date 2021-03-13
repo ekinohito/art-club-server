@@ -3,12 +3,14 @@ const quotes = require('./sql/quotes')
 const partners = require('./sql/partners')
 const previews = require('./sql/previews')
 const residents = require('./sql/residents');
+const posters = require('./sql/posters');
 
 let db = new sqlite3.Database('./db.db');
 db.run(quotes.createQuotesSQL)
 db.run(partners.createPartnersSQL)
 db.run(previews.createPreviewsSQL)
 db.run(residents.createResidentsSQL)
+db.run(posters.createPostersSQL)
 
 module.exports = {
     deleteQuotes: () => db.run(quotes.deleteQuotesSQL),
@@ -33,5 +35,11 @@ module.exports = {
     selectResidents: () => new Promise((resolve) =>
         db.all(residents.selectResidentsSQL, (err, rows) => {resolve(rows)})
     ),
-    insertResidents: (preview) => db.run(residents.insertResidentsSQL, [preview.name, preview.iconName, preview.href]),
+    insertResidents: (resident) => db.run(residents.insertResidentsSQL, [resident.name, resident.iconName, resident.href]),
+
+    deletePosters: () => db.run(posters.deletePostersSQL),
+    selectPosters: () => new Promise((resolve) =>
+        db.all(posters.selectPostersSQL, (err, rows) => {resolve(rows)})
+    ),
+    insertPosters: (poster) => db.run(posters.insertPostersSQL, [poster.name, poster.iconName, poster.date, poster.description]),
 }

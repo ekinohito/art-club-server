@@ -18,3 +18,7 @@ fs.readFile(path.join(__dirname, '../data/previews.json'),
 db.deleteResidents()
 fs.readFile(path.join(__dirname, '../data/residents.json'),
     (err, data) => JSON.parse(data.toString()).forEach(item => db.insertResidents(item)))
+
+db.deletePosters()
+fs.readFile(path.join(__dirname, '../data/posters.json'),
+    (err, data) => JSON.parse(data.toString()).forEach(item => db.insertPosters(item)))

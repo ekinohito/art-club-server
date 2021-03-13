@@ -3,6 +3,7 @@ import QuotesForm from "../components/admin_sections/quotes_form";
 import PreviewsForm from "../components/admin_sections/previews_form";
 import PartnersForm from "../components/admin_sections/partners_form";
 import ResidentsForm from "../components/admin_sections/residents_form";
+import PostersForm from "../components/admin_sections/posters_form";
 
 export default function Admin() {
     return (
@@ -11,6 +12,7 @@ export default function Admin() {
             <PreviewsForm/>
             <PartnersForm/>
             <ResidentsForm/>
+            <PostersForm/>
             http://images.fineartamerica.com/images-medium-large/surprised-cat-eric-hacke.jpg
         </div>
     )

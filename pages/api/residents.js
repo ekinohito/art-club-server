@@ -4,11 +4,11 @@ export default (req, res) => {
     switch (req.method){
         case "GET":
             db.selectResidents().then(result => res.status(200).json(result.map(
-                partner => ({
-                    id: partner.resident_id,
-                    iconName: partner.resident_icon_name,
-                    name: partner.resident_name,
-                    href: partner.resident_href
+                resident => ({
+                    id: resident.resident_id,
+                    iconName: resident.resident_icon_name,
+                    name: resident.resident_name,
+                    href: resident.resident_href
                 }))))
             return;
         case "POST":
