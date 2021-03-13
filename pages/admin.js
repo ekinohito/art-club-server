@@ -33,7 +33,6 @@ export default function Gallery() {
                 initialValues={{
                     title: '',
                     link: '',
-                    image: '',
                 }}
                 onSubmit={async (values) => {
                     let data = new FormData()
@@ -42,12 +41,13 @@ export default function Gallery() {
                         method: 'POST',
                         body: data
                     })
+                    let file_data = await file_upload.json()
                     let response = await fetch('/api/partners', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'json/application;charset=utf-8'
                         },
-                        body: JSON.stringify(values)
+                        body: JSON.stringify({...values, image: file_data.link})
                     });
                 }}
             >
@@ -58,8 +58,7 @@ export default function Gallery() {
                     <label htmlFor="link">Link</label>
                     <Field id="link" name="link" placeholder="Doe" />
 
-                    <label htmlFor="image">Image</label>
-                    <Field id="image" name="image" placeholder="Doe" />
+                    <label htmlFor="file">Image</label>
                     <input id="file" name="file" type="file" onChange={(event) => {
                         setFile(event.currentTarget.files[0]);
                     }} />
