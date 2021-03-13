@@ -35,7 +35,7 @@ const deletePartnersSQL = `
 `
 
 const insertPartnersSQL = `
-    INSERT INTO partners(partner_id, partner_title, partner_image, partner_link) VALUES (?, ?, ?, ?) 
+    INSERT INTO partners(partner_title, partner_image, partner_link) VALUES (?, ?, ?) 
 `
 
 const selectPartnersSQL = `
@@ -51,5 +51,10 @@ module.exports = {
     selectQuotes: () => new Promise((resolve) =>
         db.all(selectQuotesSQL, (err, rows) => {resolve(rows)})
     ),
-    insertQuotes: (quote) => db.run(insertQuotesSQL, [quote])
+    insertQuotes: (quote) => db.run(insertQuotesSQL, [quote]),
+    deletePartners: () => db.run(deletePartnersSQL),
+    selectPartners: () => new Promise((resolve) =>
+        db.all(selectPartnersSQL, (err, rows) => {resolve(rows)})
+    ),
+    insertPartners: (partner) => db.run(insertPartnersSQL, [partner.title, partner.image, partner.link])
 }

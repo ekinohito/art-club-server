@@ -1,5 +1,3 @@
-import quotes_base from "../../data/quotes.json";
-let quotes = quotes_base
 const db = require('../../db/db')
 
 export default (req, res) => {
