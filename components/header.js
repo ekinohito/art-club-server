@@ -49,7 +49,7 @@ export default function Header({animated = true}) {
             {
                 !showNav
                     ?
-                    <button className="bg-transparent" onClick={() => openNav()}>
+                    <button className="bg-transparent" onClick={openNav}>
                         <img
                             src="/assets/icons/menu.png"
                             alt="menu"

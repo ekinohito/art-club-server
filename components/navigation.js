@@ -30,24 +30,24 @@ export default function Navigation() {
         >
             <div className="d-flex flex-column">
                 <div className="align-self-end">
-                    <button className="bg-transparent" onClick={() => closeNav()}>
+                    <button className="bg-transparent" onClick={closeNav}>
                         <img src="/assets/icons/cross.png" alt="cross" width={25} height={25}/>
                     </button>
                 </div>
                 <span className="h3-text text-white">
-                            Навигация
-                        </span>
+                    Навигация
+                </span>
                 <div className="d-flex flex-column mt-2">
                     {
                         sections.map((section, index) =>
                             <Link
                                 href={section.href}
                                 key={index}
-                                onClick={() => closeNav()}
 
                             >
                                 <span
                                     className={`text-decoration-none px-3 py-2 subtitle-text ${styles.navItem}`}
+                                    onClick={closeNav}
                                 >
                                     {section.name}
                                 </span>
