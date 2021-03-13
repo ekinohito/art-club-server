@@ -33,12 +33,12 @@ export default function Home(props) {
 
 export async function getStaticProps(context) {
     const url = 'http://localhost:3000';
-    const posters = await fetcher(url + '/api/posters');
-    const competence = await fetcher(url + '/api/competence');
-    const partners = await fetcher(url + '/api/partners');
-    const previews = await fetcher(url + '/api/previews');
-    const residents = await fetcher(url + '/api/residents');
-    const quotes = await fetcher(url + '/api/quotes');
+    const posters = await fetcher(url + '/api/data/posters');
+    const competence = await fetcher(url + '/api/data/competence');
+    const partners = await fetcher(url + '/api/data/partners');
+    const previews = await fetcher(url + '/api/data/previews');
+    const residents = await fetcher(url + '/api/data/residents');
+    const quotes = await fetcher(url + '/api/data/quotes');
 
     return {
         props: {

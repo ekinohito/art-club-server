@@ -1,4 +1,4 @@
-import competence from "../../data/competence.json";
+import competence from "../../../data/competence.json";
 
 export default (req, res) => {
     switch (req.method){

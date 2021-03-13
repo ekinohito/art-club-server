@@ -1,5 +1,6 @@
 import React, {useCallback, useEffect, useRef, useState} from 'react';
 import {useNavigation} from "../context/navigation";
+import Link from 'next/link'
 
 export default function Header({animated = true}) {
     const [transparent, setTransparent] = useState(animated);
@@ -29,22 +30,24 @@ export default function Header({animated = true}) {
                 zIndex: 100
             }}
         >
-
-            <a
-                href="/"
+            <div
                 style={{
                     opacity: transparent ? 0 : 1,
                     transition: "visibility .5s, opacity .5s",
-                    visibility: transparent ? "hidden" : "visible"
+                    visibility: transparent ? "hidden" : "visible",
+                    cursor: 'pointer'
                 }}
             >
-                <img
-                    src="/assets/icons/logo.png"
-                    alt="logo"
-                    width={35}
-                    height={35}
-                />
-            </a>
+                <Link href="/">
+                    <img
+                        src="/assets/icons/logo.png"
+                        alt="logo"
+                        width={35}
+                        height={35}
+                    />
+                </Link>
+            </div>
+
 
             {
                 !showNav
