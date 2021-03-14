@@ -9,7 +9,7 @@ import RegistrationForm from "../components/admin_sections/registration_form";
 import {UserProvider, useUser} from "../context/user";
 
 const AdminLayout = () => {
-    const {user} = useUser();
+    const {user, logout} = useUser();
 
     return (
         <div className="d-flex flex-column overflow-hidden">
@@ -18,6 +18,11 @@ const AdminLayout = () => {
                 user
                     ?
                     <>
+                        <div className="d-flex justify-content-end">
+                            <button className="btn btn-outline-danger" onClick={logout}>
+                                Выйти
+                            </button>
+                        </div>
                         <QuotesForm/>
                         <PreviewsForm/>
                         <PartnersForm/>
@@ -27,6 +32,7 @@ const AdminLayout = () => {
                     </>
                     :
                     <>
+
                         <LoginForm/>
                         <RegistrationForm/>
                     </>

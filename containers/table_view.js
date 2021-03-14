@@ -11,11 +11,11 @@ export default function TableView({children, symbols=30}) {
         <div className="mb-5">
             <table>
                 <tr>
-                    {keys.map(value => <th className="px-2">{value}</th>)}
+                    {keys.map((value, index) => <th className="px-2" key={index}>{value}</th>)}
                 </tr>
                 {
-                    children.map(child => <tr>
-                        {keys.map(value => <td className="px-2" title={child[value]}>
+                    children.map((child, index) => <tr key={index}>
+                        {keys.map((value, index) => <td className="px-2" title={child[value]} key={index}>
                             {truncateString(child[value].toString(), symbols)}
                         </td>)}
                     </tr>)

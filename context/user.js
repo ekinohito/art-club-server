@@ -1,4 +1,4 @@
-import React, {useState, useCallback, useEffect, useReducer} from 'react';
+import React, {useState, useCallback, useEffect} from 'react';
 import fetcher from "../fetcher";
 
 
@@ -16,34 +16,24 @@ export const UserProvider = ({children}) => {
     )
 }
 
-const reducer = (state, action) => {
-    switch (action.type) {
-
-    }
-}
-
 const useProvideUser = () => {
-    const [state, dispatch] = useReducer();
-
     const [user, setUser] = useState(null);
-    const [loggedIn, setLoggedIn] = useState(true);
 
-    useEffect(() => {
-        if (user){
-            if (!loggedIn)
-                setUser(false);
-            return;
-        }
+    const getUser = useCallback(() => {
         fetcher('/api/user/token', {
             method: 'GET',
             credentials: 'include'
         })
             .then(res => {
                 if (!res.user) return;
-                setLoggedIn(true);
                 setUser(res.user);
             });
-    }, [loggedIn])
+    }, []);
+
+    useEffect(() => {
+        if (!user)
+            getUser()
+    }, [])
 
     const login = useCallback((username, password) => {
         fetcher('/api/login', {
@@ -53,9 +43,9 @@ const useProvideUser = () => {
         })
             .then(res => {
                 if (res.success)
-                    setLoggedIn(true);
+                    getUser();
             })
-    }, [setLoggedIn]);
+    }, []);
 
     const register = useCallback((username, password) => {
         fetcher('/api/register', {
@@ -65,9 +55,9 @@ const useProvideUser = () => {
         })
             .then(res => {
                 if (res.success)
-                    setLoggedIn(true);
+                    getUser();
             })
-    }, [setLoggedIn]);
+    }, []);
 
     const logout = useCallback(() => {
         fetcher('/api/logout', {
@@ -76,9 +66,9 @@ const useProvideUser = () => {
         })
             .then(res => {
                 if (res.success)
-                    setLoggedIn(false);
+                    setUser(null)
             })
-    }, [setLoggedIn])
+    }, [])
 
     return {
         user,
