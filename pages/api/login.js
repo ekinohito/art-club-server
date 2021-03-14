@@ -9,12 +9,8 @@ export default async (req, res) => {
         return
     }
 
-    console.log(req.body)
     const {username, password} = JSON.parse(req.body);
-    console.log(username)
     let user = await db.findUsers(username)
-    console.log(user)
-    console.log(password)
 
     if (user && await bcrypt.compare(password, user.user_pwd_hash)) {
         const cookies = new Cookies(req, res)

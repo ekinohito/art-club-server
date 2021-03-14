@@ -1,12 +1,13 @@
-import jwt from 'jsonwebtoken';
+import {verifyUser} from "../../../utils/jwt";
 
 export default (req, res) => {
-    const token = jwt.verify(req.body, 'pazhilayaKwakazyabra', (err, data) => {
-        if (err) {
-            res.status(401);
-            return;
-        }
+    const user = verifyUser(req, res);
+    if (!user) return;
 
-        res.status(200).json(data)
-    })
+    res.status(200).json({
+        user: {
+            username: user.username,
+            role: user.role
+        }
+    });
 }

@@ -2,8 +2,10 @@ import {Field, Form, Formik} from "formik";
 import React, {useState} from "react";
 import uploader from "../../utils/uploader";
 import FileUpload from "../file_upload";
+import {useUser} from "../../context/user";
 
 export default function LoginForm() {
+    const {login} = useUser();
     return <>
         <h3>Login</h3>
         <Formik
@@ -12,13 +14,7 @@ export default function LoginForm() {
                 password: '',
             }}
             onSubmit={async (values) => {
-                let response = await fetch('/api/login', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'json/application;charset=utf-8'
-                    },
-                    body: JSON.stringify(values)
-                });
+                login(values.username, values.password);
             }}
         >
             <Form>
