@@ -1,10 +1,11 @@
 import useSWR from "swr";
 
 const useGetCompetence = (competence) => {
-    const {data, error} = useSWR('/api/data/competence', {initialData: competence});
+    const {data, mutate, error} = useSWR('/api/data/competence', {initialData: competence});
 
     return {
         competence: data,
+        mutate,
         error
     }
 }
