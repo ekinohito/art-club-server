@@ -1,3 +1,5 @@
+import {checkAdmin} from "../../../utils/jwt";
+
 const db = require('../../../db/db')
 
 export default (req, res) => {
@@ -13,6 +15,7 @@ export default (req, res) => {
             return;
         case "POST":
             console.log(JSON.parse(req.body))
+            if (!checkAdmin(req, res)) return
             db.insertResidents(JSON.parse(req.body))
             res.status(200).json({"success": true})
             return;

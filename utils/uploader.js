@@ -1,7 +1,7 @@
 export default async function uploader(file) {
     let data = new FormData()
     data.append('file', file)
-    let file_upload = await fetch('/api/upload', {
+    let file_upload = await fetch('/api/data/upload', {
         method: 'POST',
         body: data
     })

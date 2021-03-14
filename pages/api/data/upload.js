@@ -1,6 +1,7 @@
 import {IncomingForm} from 'formidable'
 import fs from 'fs'
 import path from "path";
+import {checkAdmin} from "../../../utils/jwt";
 
 export const config = {
     api: {
@@ -9,6 +10,7 @@ export const config = {
 };
 
 export default async (req, res) => {
+    if (!checkAdmin(req, res)) return
     const data = await new Promise((resolve, reject) => {
         const form = new IncomingForm({uploadDir: path.resolve('./public/uploads')})
         form.parse(req, (err, fields, files) => {
