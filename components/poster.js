@@ -1,16 +1,17 @@
 import React, {useEffect} from 'react';
-import useModal from "../hooks/useModal";
 import PosterDescription from "./poster_description";
+import {usePosterDescription} from "../context/poster_description";
 
 export default function Poster({poster}) {
-    const {show, openModal, closeModal} = useModal();
-
-    useEffect(() => console.log(show), [show])
+    const {openPD, setPoster} = usePosterDescription();
 
     return (
         <div
             style={{cursor: "pointer"}}
-            onClick={openModal}
+            onClick={() => {
+                setPoster(poster);
+                openPD();
+            }}
         >
             <img
                 src={`${poster.iconName}`}
@@ -19,7 +20,6 @@ export default function Poster({poster}) {
                 className="img-fluid"
                 style={{borderRadius: '20px'}}
             />
-            <PosterDescription show={show} closeModal={closeModal} poster={poster}/>
         </div>
 
 

@@ -1,16 +1,18 @@
 import React from 'react';
 import Modal from "../containers/modal";
+import {usePosterDescription} from "../context/poster_description";
 // import PropTypes from 'prop-types';
 
-export default function PosterDescription({show, closeModal, poster}) {
+export default function PosterDescription() {
+    const {show, closePD, poster} = usePosterDescription();
     return (
-        <Modal show={show} closeModal={closeModal}>
+        <Modal show={show} closeModal={closePD}>
             <div className="row h-100 justify-content-center">
                 <div className="col-md-9 col-12 d-flex flex-column justify-content-center">
                     <div className="bg-light-grey p-4 my-4" style={{borderRadius: 10}}>
                         <div className="d-flex flex-column">
                             <div className="d-flex justify-content-end">
-                                <button onClick={closeModal} className="bg-transparent">
+                                <button onClick={closePD} className="bg-transparent">
                                     <img src="/assets/icons/cross.png" alt="cross" width={20} height={20}/>
                                 </button>
                             </div>
