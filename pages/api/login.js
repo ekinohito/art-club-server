@@ -1,7 +1,9 @@
 import jwt from 'jsonwebtoken';
 import Cookies from "cookies";
+import db from "../../db/db";
+const bcrypt = require('bcrypt');
 
-export default (req, res) => {
+export default async (req, res) => {
     if (!req.body || req.method !== "POST") {
         res.status(404).json({success: false});
         return
@@ -10,12 +12,15 @@ export default (req, res) => {
     console.log(req.body)
     const {username, password} = JSON.parse(req.body);
     console.log(username)
+    let user = await db.findUsers(username)
+    console.log(user)
+    console.log(password)
 
-    if (username === 'admin' && password === 'admin') {
+    if (user && await bcrypt.compare(password, user.user_pwd_hash)) {
         const cookies = new Cookies(req, res)
         cookies.set('token', jwt.sign({
             username,
-            role: 'admin'
+            role: user.user_role
         }, 'pazhilayaKwakazyabra'))
         res.status(200).json({success: true})
         return

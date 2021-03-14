@@ -12,7 +12,7 @@ module.exports = {
         DELETE FROM users
     `,
     insertUsersSQL: `
-        INSERT INTO users(user_name, user_pwd_hash, user_role) VALUES (?) 
+        INSERT INTO users(user_name, user_pwd_hash, user_role) VALUES (?, ?, ?) 
     `,
     selectUsersSQL: `
         SELECT * FROM users

@@ -8,6 +8,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "bootstrap": "^4.6.0",
     "cookies": "^0.8.0",
     "formidable": "^1.2.2",

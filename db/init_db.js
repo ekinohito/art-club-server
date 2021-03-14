@@ -1,6 +1,7 @@
 const db = require('./db')
 const fs = require('fs')
 const path = require('path')
+const bcrypt = require('bcrypt');
 
 db.deleteQuotes()
 fs.readFile(path.join(__dirname, '../data/quotes.json'),
@@ -23,4 +24,5 @@ fs.readFile(path.join(__dirname, '../data/posters.json'),
     (err, data) => JSON.parse(data.toString()).forEach(item => db.insertPosters(item)))
 
 db.deleteUsers()
-db.insertUsers({name: 'admin', pwdHash: ''})
+bcrypt.hash('admin', 12).then((value) => db.insertUsers({name: 'admin', role: 'admin', pwdHash: value }))
+

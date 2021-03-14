@@ -50,5 +50,7 @@ module.exports = {
         db.all(users.selectUsersSQL, (err, rows) => {resolve(rows)})
     ),
     insertUsers: (user) => db.run(users.insertUsersSQL, [user.name, user.pwdHash, user.role]),
-    findUsers: (name) => db.run(users.findUsersSQL, [name])
+    findUsers: (name) => new Promise((resolve) =>
+        db.get(users.findUsersSQL, [name], (err, row) => {resolve(row)})
+    ),
 }
