@@ -2,6 +2,7 @@ const db = require('./db')
 const fs = require('fs')
 const path = require('path')
 const bcrypt = require('bcrypt');
+require('dotenv').config({path: '.env.local'});
 
 db.deleteQuotes()
 fs.readFile(path.join(__dirname, '../data/quotes.json'),
@@ -24,6 +25,6 @@ fs.readFile(path.join(__dirname, '../data/posters.json'),
     (err, data) => JSON.parse(data.toString()).forEach(item => db.insertPosters(item)))
 
 db.deleteUsers()
-bcrypt.hash('admin', process.env.SALT_ROUNDS)
+bcrypt.hash('admin', +process.env.SALT_ROUNDS)
     .then((value) => db.insertUsers({name: 'admin', role: 'admin', pwdHash: value }))
 
