@@ -9,7 +9,7 @@ export default function QuotesForm() {
                 quote: '',
             }}
             onSubmit={async (values) => {
-                let response = await fetch('/api/quotes', {
+                let response = await fetch('/api/data/quotes', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'text/html;charset=utf-8'

@@ -14,7 +14,7 @@ export default function PreviewsForm() {
             }}
             onSubmit={async (values) => {
                 let file_data = await uploader(file)
-                let response = await fetch('/api/previews', {
+                let response = await fetch('/api/data/previews', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'json/application;charset=utf-8'
