@@ -32,7 +32,7 @@ export default function Home(props) {
 }
 
 export async function getStaticProps(context) {
-    const url = 'http://localhost:3000';
+    const url = process.env.API_URL;
     const posters = await fetcher(url + '/api/data/posters');
     const competence = await fetcher(url + '/api/data/competence');
     const partners = await fetcher(url + '/api/data/partners');
