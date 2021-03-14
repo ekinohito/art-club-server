@@ -7,14 +7,18 @@ const posters = require('./sql/posters');
 const users = require('./sql/users');
 
 let db = new sqlite3.Database('./db.db');
-db.run(quotes.createQuotesSQL)
-db.run(partners.createPartnersSQL)
-db.run(previews.createPreviewsSQL)
-db.run(residents.createResidentsSQL)
-db.run(posters.createPostersSQL)
-db.run(users.createUsersSQL)
+let ready = Promise.allSettled([
+    new Promise(resolve => db.run(quotes.createQuotesSQL, err => {resolve()})),
+    new Promise(resolve => db.run(partners.createPartnersSQL, err => {resolve()})),
+    new Promise(resolve => db.run(previews.createPreviewsSQL, err => {resolve()})),
+    new Promise(resolve => db.run(residents.createResidentsSQL, err => {resolve()})),
+    new Promise(resolve => db.run(posters.createPostersSQL, err => {resolve()})),
+    new Promise(resolve => db.run(users.createUsersSQL, err => {resolve()}))])
+
 
 module.exports = {
+    ready,
+
     deleteQuotes: () => db.run(quotes.deleteQuotesSQL),
     deleteOneQuotes: (quote) => db.run(quotes.deleteOnePartnersSQL, [quote.id]),
     selectQuotes: () => new Promise((resolve) =>
