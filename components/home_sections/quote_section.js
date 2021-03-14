@@ -31,7 +31,7 @@ export default function QuoteSection({timeout = 5000, ...props}) {
                         style={props}
                     >
                         <div className="h2-text-lg h3-text text-white py-5 text-center" style={{lineHeight: "125%"}}>
-                            "{quotes ? quotes[item]: null}"
+                            "{quotes ? quotes[item].text: null}"
                         </div>
                     </animated.div>
                 )}

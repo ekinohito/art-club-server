@@ -9,25 +9,25 @@ export default function QuotesForm() {
         <h3>Quotes</h3>
         <Formik
             initialValues={{
-                quote: '',
+                text: '',
             }}
             onSubmit={async (values) => {
                 let response = await fetch('/api/data/quotes', {
                     method: 'POST',
                     headers: {
-                        'Content-Type': 'text/html;charset=utf-8'
+                        'Content-Type': 'json/application;charset=utf-8'
                     },
-                    body: values.quote
+                    body: JSON.stringify(values)
                 });
                 await mutate()
             }}
         >
             <Form>
-                <label htmlFor="quote">Quote</label>
-                <Field id="quote" name="quote" placeholder="ya s'yel deda" />
+                <label htmlFor="text">Text</label>
+                <Field id="text" name="text" placeholder="ya s'yel deda" />
                 <button type="submit">Submit</button>
             </Form>
         </Formik>
-        <TableView symbols={100}>{quotes?.map(value => {return {quote: value}})}</TableView>
+        <TableView symbols={100} api="/api/data/quotes" mutate={mutate}>{quotes}</TableView>
     </>
 }

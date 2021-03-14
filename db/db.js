@@ -16,10 +16,11 @@ db.run(users.createUsersSQL)
 
 module.exports = {
     deleteQuotes: () => db.run(quotes.deleteQuotesSQL),
+    deleteOneQuotes: (quote) => db.run(quotes.deleteOnePartnersSQL, [quote.id]),
     selectQuotes: () => new Promise((resolve) =>
         db.all(quotes.selectQuotesSQL, (err, rows) => {resolve(rows)})
     ),
-    insertQuotes: (quote) => db.run(quotes.insertQuotesSQL, [quote]),
+    insertQuotes: (quote) => db.run(quotes.insertQuotesSQL, [quote.text]),
 
     deletePartners: () => db.run(partners.deletePartnersSQL),
     deleteOnePartners: (partner) => db.run(partners.deleteOnePartnersSQL, [partner.id]),

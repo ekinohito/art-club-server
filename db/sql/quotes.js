@@ -9,6 +9,9 @@ module.exports = {
     deleteQuotesSQL: `
         DELETE FROM quotes
     `,
+    deleteOnePartnersSQL: `
+        DELETE FROM quotes WHERE quote_id = ?
+    `,
     insertQuotesSQL: `
         INSERT INTO quotes(quote_text) VALUES (?) 
     `,
