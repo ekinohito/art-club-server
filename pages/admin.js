@@ -11,12 +11,12 @@ export default function Admin() {
     return (
         <div className="d-flex flex-column overflow-hidden">
             <LoginForm/>
+            <RegistrationForm/>
             <QuotesForm/>
             <PreviewsForm/>
             <PartnersForm/>
             <ResidentsForm/>
             <PostersForm/>
-            <RegistrationForm/>
             http://images.fineartamerica.com/images-medium-large/surprised-cat-eric-hacke.jpg
         </div>
     )

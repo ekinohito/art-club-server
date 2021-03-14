@@ -1,7 +1,10 @@
 import {Field, Form, Formik} from "formik";
 import React from "react";
+import {useGetQuotes} from "../../hooks/requests/useQuotes";
+import TableView from "../../containers/table_view";
 
 export default function QuotesForm() {
+    let { quotes, mutate } = useGetQuotes()
     return <>
         <h3>Quotes</h3>
         <Formik
@@ -16,6 +19,7 @@ export default function QuotesForm() {
                     },
                     body: values.quote
                 });
+                await mutate()
             }}
         >
             <Form>
@@ -24,5 +28,6 @@ export default function QuotesForm() {
                 <button type="submit">Submit</button>
             </Form>
         </Formik>
+        <TableView symbols={100}>{quotes?.map(value => {return {quote: value}})}</TableView>
     </>
 }

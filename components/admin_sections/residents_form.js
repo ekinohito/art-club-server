@@ -2,9 +2,12 @@ import {Field, Form, Formik} from "formik";
 import React, {useState} from "react";
 import uploader from "../../utils/uploader";
 import FileUpload from "../file_upload";
+import TableView from "../../containers/table_view";
+import {useGetResidents} from "../../hooks/requests/useResidents";
 
 export default function ResidentsForm() {
     let [file, setFile] = useState(null)
+    let { residents, mutate } = useGetResidents()
     return <>
         <h3>Residents</h3>
         <Formik
@@ -21,6 +24,7 @@ export default function ResidentsForm() {
                     },
                     body: JSON.stringify({...values, iconName: file_data.link})
                 });
+                await mutate()
             }}
         >
             <Form>
@@ -32,5 +36,6 @@ export default function ResidentsForm() {
                 <button type="submit">Submit</button>
             </Form>
         </Formik>
+        <TableView>{residents}</TableView>
     </>
 }

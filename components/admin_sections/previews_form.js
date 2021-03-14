@@ -2,9 +2,12 @@ import {Field, Form, Formik} from "formik";
 import React, {useState} from "react";
 import uploader from "../../utils/uploader";
 import FileUpload from "../file_upload";
+import {useGetPreviews} from "../../hooks/requests/usePreviews";
+import TableView from "../../containers/table_view";
 
 export default function PreviewsForm() {
     let [file, setFile] = useState(null)
+    let { previews, mutate } = useGetPreviews()
     return <>
         <h3>Previews</h3>
         <Formik
@@ -21,6 +24,7 @@ export default function PreviewsForm() {
                     },
                     body: JSON.stringify({...values, preview: file_data.link})
                 });
+                await mutate()
             }}
         >
             <Form>
@@ -32,5 +36,6 @@ export default function PreviewsForm() {
                 <button type="submit">Submit</button>
             </Form>
         </Formik>
+        <TableView>{previews}</TableView>
     </>
 }
