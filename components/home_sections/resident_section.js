@@ -14,7 +14,7 @@ export default function ResidentSection(props) {
                     Наши резиденты
                 </span>
                 <Slider>
-                    {residents.map(resident =>
+                    {residents?.map(resident =>
                         <a
                             key={resident.id}
                         >

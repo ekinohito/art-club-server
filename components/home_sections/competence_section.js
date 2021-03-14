@@ -13,7 +13,7 @@ export default function CompetenceSection(props) {
                 </span>
                 <div className="d-flex flex-md-row flex-column justify-content-around mt-5">
                     {
-                        competence.map(item =>
+                        competence?.map(item =>
                             <a
                                 className="d-flex flex-column align-items-center mb-md-0 mb-4 text-decoration-none opacity85-on-hover"
                                 key={item.name}

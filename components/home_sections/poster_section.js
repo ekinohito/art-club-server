@@ -24,7 +24,7 @@ export default function PosterSection(props) {
                 </div>
                 <PosterDescriptionProvider>
                     <Slider>
-                        {posters.map(poster =>
+                        {posters?.map(poster =>
                             <div className="p-1 p-md-3 p-xl-4 h-100 bg-light-grey" key={poster.id}>
                                 <Poster poster={poster} />
                             </div>
