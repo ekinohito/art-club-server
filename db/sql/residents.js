@@ -11,6 +11,9 @@ module.exports = {
     deleteResidentsSQL: `
         DELETE FROM residents
     `,
+    deleteResidentsOneSQL: `
+        DELETE FROM residents WHERE resident_id = ?
+    `,
     insertResidentsSQL: `
         INSERT INTO residents(resident_name, resident_icon_name, resident_href) VALUES (?, ?, ?) 
     `,

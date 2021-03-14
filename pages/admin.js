@@ -38,8 +38,6 @@ const AdminLayout = () => {
                     </>
 
             }
-
-            http://images.fineartamerica.com/images-medium-large/surprised-cat-eric-hacke.jpg
         </div>
     )
 }

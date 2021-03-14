@@ -36,6 +36,6 @@ export default function PreviewsForm() {
                 <button type="submit">Submit</button>
             </Form>
         </Formik>
-        <TableView>{previews}</TableView>
+        <TableView api="/api/data/previews" mutate={mutate}>{previews}</TableView>
     </>
 }

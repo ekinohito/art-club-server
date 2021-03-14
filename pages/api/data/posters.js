@@ -20,5 +20,11 @@ export default (req, res) => {
             db.insertPosters(JSON.parse(req.body))
             res.status(200).json({"success": true})
             return;
+        case "DELETE":
+            if (!checkAdmin(req, res)) return
+            console.log(JSON.parse(req.body))
+            db.deleteOnePosters(JSON.parse(req.body))
+            res.status(200).json({"success": true})
+            return;
     }
 }

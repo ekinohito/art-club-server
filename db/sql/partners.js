@@ -11,6 +11,9 @@ module.exports = {
     deletePartnersSQL: `
         DELETE FROM partners
     `,
+    deleteOnePartnersSQL: `
+        DELETE FROM partners WHERE partner_id = ?
+    `,
     insertPartnersSQL: `
         INSERT INTO partners(partner_title, partner_image, partner_link) VALUES (?, ?, ?) 
     `,

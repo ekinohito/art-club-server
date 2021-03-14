@@ -22,24 +22,28 @@ module.exports = {
     insertQuotes: (quote) => db.run(quotes.insertQuotesSQL, [quote]),
 
     deletePartners: () => db.run(partners.deletePartnersSQL),
+    deleteOnePartners: (partner) => db.run(partners.deleteOnePartnersSQL, [partner.id]),
     selectPartners: () => new Promise((resolve) =>
         db.all(partners.selectPartnersSQL, (err, rows) => {resolve(rows)})
     ),
     insertPartners: (partner) => db.run(partners.insertPartnersSQL, [partner.title, partner.image, partner.link]),
 
     deletePreviews: () => db.run(previews.deletePreviewsSQL),
+    deleteOnePreviews: (preview) => db.run(previews.deletePreviewsOneSQL, [preview.id]),
     selectPreviews: () => new Promise((resolve) =>
         db.all(previews.selectPreviewsSQL, (err, rows) => {resolve(rows)})
     ),
     insertPreviews: (preview) => db.run(previews.insertPreviewsSQL, [preview.text, preview.preview, preview.link]),
 
     deleteResidents: () => db.run(residents.deleteResidentsSQL),
+    deleteOneResidents: (resident) => db.run(residents.deleteResidentsOneSQL, [resident.id]),
     selectResidents: () => new Promise((resolve) =>
         db.all(residents.selectResidentsSQL, (err, rows) => {resolve(rows)})
     ),
     insertResidents: (resident) => db.run(residents.insertResidentsSQL, [resident.name, resident.iconName, resident.href]),
 
     deletePosters: () => db.run(posters.deletePostersSQL),
+    deleteOnePosters: (poster) => db.run(posters.deletePostersOneSQL, [poster.id]),
     selectPosters: () => new Promise((resolve) =>
         db.all(posters.selectPostersSQL, (err, rows) => {resolve(rows)})
     ),

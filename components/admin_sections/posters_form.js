@@ -39,6 +39,6 @@ export default function PostersForm() {
                 <button type="submit">Submit</button>
             </Form>
         </Formik>
-        <TableView>{posters}</TableView>
+        <TableView api="/api/data/posters" mutate={mutate}>{posters}</TableView>
     </>
 }

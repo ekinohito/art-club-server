@@ -19,5 +19,11 @@ export default (req, res) => {
             db.insertPreviews(JSON.parse(req.body))
             res.status(200).json({"success": true})
             return;
+        case "DELETE":
+            if (!checkAdmin(req, res)) return
+            console.log(JSON.parse(req.body))
+            db.deleteOnePreviews(JSON.parse(req.body))
+            res.status(200).json({"success": true})
+            return;
     }
 }

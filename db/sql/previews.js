@@ -11,6 +11,9 @@ module.exports = {
     deletePreviewsSQL: `
         DELETE FROM previews
     `,
+    deletePreviewsOneSQL: `
+        DELETE FROM previews WHERE preview_id = ?
+    `,
     insertPreviewsSQL: `
         INSERT INTO previews(preview_text, preview_preview, preview_link) VALUES (?, ?, ?) 
     `,

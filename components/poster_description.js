@@ -16,7 +16,7 @@ export default function PosterDescription({show, closeModal, poster}) {
                             </div>
                             <div className="d-flex flex-sm-row flex-column " style={{overflowY: "visible"}}>
                                 <img
-                                    src={`/data/posters/${poster.iconName}`}
+                                    src={poster.iconName}
                                     alt={poster.id}
                                     height={300}
                                     style={{borderRadius: 10}}

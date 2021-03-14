@@ -37,6 +37,6 @@ export default function PartnersForm() {
                 <button type="submit">Submit</button>
             </Form>
         </Formik>
-        <TableView>{partners}</TableView>
+        <TableView api="/api/data/partners" mutate={mutate}>{partners}</TableView>
     </>
 }

@@ -19,5 +19,11 @@ export default (req, res) => {
             db.insertPartners(JSON.parse(req.body))
             res.status(200).json({"success": true})
             return;
+        case "DELETE":
+            if (!checkAdmin(req, res)) return
+            console.log(JSON.parse(req.body))
+            db.deleteOnePartners(JSON.parse(req.body))
+            res.status(200).json({"success": true})
+            return;
     }
 }

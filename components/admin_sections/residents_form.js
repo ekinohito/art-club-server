@@ -36,6 +36,6 @@ export default function ResidentsForm() {
                 <button type="submit">Submit</button>
             </Form>
         </Formik>
-        <TableView>{residents}</TableView>
+        <TableView api="/api/data/residents" mutate={mutate}>{residents}</TableView>
     </>
 }

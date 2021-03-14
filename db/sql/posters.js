@@ -12,6 +12,9 @@ module.exports = {
     deletePostersSQL: `
         DELETE FROM posters
     `,
+    deletePostersOneSQL: `
+        DELETE FROM posters WHERE poster_id = ?
+    `,
     insertPostersSQL: `
         INSERT INTO posters(poster_name, poster_icon_name, poster_date, poster_description) VALUES (?, ?, ?, ?) 
     `,
