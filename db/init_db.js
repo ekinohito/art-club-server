@@ -24,5 +24,6 @@ fs.readFile(path.join(__dirname, '../data/posters.json'),
     (err, data) => JSON.parse(data.toString()).forEach(item => db.insertPosters(item)))
 
 db.deleteUsers()
-bcrypt.hash('admin', 12).then((value) => db.insertUsers({name: 'admin', role: 'admin', pwdHash: value }))
+bcrypt.hash('admin', process.env.SALT_ROUNDS)
+    .then((value) => db.insertUsers({name: 'admin', role: 'admin', pwdHash: value }))
 

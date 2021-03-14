@@ -21,7 +21,7 @@ export default async (req, res) => {
         cookies.set('token', jwt.sign({
             username,
             role: user.user_role
-        }, 'pazhilayaKwakazyabra'))
+        }, process.env.JWT_SECRET_KEY))
         res.status(200).json({success: true})
         return
     }
