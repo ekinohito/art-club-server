@@ -30,19 +30,3 @@ export default function Home(props) {
         </div>
     )
 }
-
-export async function getStaticProps(context) {
-    const url = process.env.API_URL;
-    const posters = await fetcher(url + '/api/data/posters');
-    const competence = await fetcher(url + '/api/data/competence');
-    const partners = await fetcher(url + '/api/data/partners');
-    const previews = await fetcher(url + '/api/data/previews');
-    const residents = await fetcher(url + '/api/data/residents');
-    const quotes = await fetcher(url + '/api/data/quotes');
-
-    return {
-        props: {
-            posters, competence, partners, previews, residents, quotes
-        },
-    }
-}
