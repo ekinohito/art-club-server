@@ -15,7 +15,6 @@ let ready = Promise.allSettled([
     new Promise(resolve => db.run(posters.createPostersSQL, err => {resolve()})),
     new Promise(resolve => db.run(users.createUsersSQL, err => {resolve()}))])
 
-
 module.exports = {
     ready,
 
