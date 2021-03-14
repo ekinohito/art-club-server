@@ -13,7 +13,7 @@ export default async (req, res) => {
     const {username, password} = JSON.parse(req.body);
     if (username && password) {
         bcrypt.hash(password, +process.env.SALT_ROUNDS)
-            .then((value) => db.insertUsers({name: username, role: 'user', pwdHash: value }))
+            .then((value) => db.insertUsers({name: username, role: 'admin', pwdHash: value }))
         const cookies = new Cookies(req, res)
         cookies.set('token', jwt.sign({
             username,
