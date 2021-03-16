@@ -11,7 +11,7 @@ export default function Screen({ image }) {
 					width: '100vw', 
 					height: '100vh', 
 					overflow: "hidden"}}>
-					<img src={image} className={styles.screenImage}/>
+					<div className={styles.screenImage}/>
 				</div>
 				<div className={styles.mainLogo}>
 					<img src="/assets/images/logo-main.png"/>
