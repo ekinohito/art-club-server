@@ -19,7 +19,15 @@ export default function Home(props) {
                 <title>Art Club</title>
             </Head>
             <Header/>
-            <TopSection/>
+            <TopSection>
+                <video
+                    src="/assets/webm/animated-bg.webm"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                />
+                </TopSection>
             <PosterSection posters={props.posters}/>
             <CompetenceSection competence={props.competence}/>
             <ResidentSection residents={props.residents}/>
