@@ -3,17 +3,13 @@ import Image from "next/image";
 
 import styles from "./TopSection.module.scss";
 
-export default function TopSection() {
+export default function TopSection({children}) {
     return (
         <div className="d-flex flex-column justify-content-center align-items-center position-relative w-100 vh-100 py-5" id="top">
-                <video
-                    src="/assets/webm/animated-bg.webm"
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    className="position-absolute"
-                />
+                
+                <div className="position-absolute">
+                    {children}
+                </div>
                 <div
                     style={{
                         zIndex: 99

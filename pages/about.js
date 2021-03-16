@@ -1,13 +1,18 @@
 import React from 'react';
+import Head from 'next/head';
 import Footer from "../components/footer";
 import Header from "../components/header";
 import Screen from "../components/screen";
+import TopSection from "../components/home_sections/top_section";
 import AboutParallaxSection from "../containers/about_parallax_section";
 import MainColoredSection from "../containers/main_colored_section";
 
 export default function About() {
     return (
         <div className="d-flex flex-column overflow-hidden">
+            <Head>
+                <title>Art Club</title>
+            </Head>
             <Header/>
             <Screen image="/assets/images/FOTO.jpg"/>
             <MainColoredSection bgClass="bg-white"><span className="h3-text">
