@@ -23,14 +23,24 @@ export default function PosterSection(props) {
 
                 </div>
                 <PosterDescriptionProvider>
-                    <Slider>
-                        {posters?.map(poster =>
-                            <div className="p-1 p-md-3 p-xl-4 h-100 bg-light-grey" key={poster.id}>
-                                <Poster poster={poster} />
-                            </div>
-                        )
-                        }
-                    </Slider>
+                    <div className="d-none d-lg-block">
+                        <Slider centerMode>
+                            {posters?.map(poster =>
+                                <div className="p-1 p-md-3 p-xl-4 h-100 bg-light-grey" key={poster.id}>
+                                    <Poster poster={poster}/>
+                                </div>)
+                            }
+                        </Slider>
+                    </div>
+                    <div className="d-block d-lg-none">
+                        <Slider>
+                            {posters?.map(poster =>
+                                <div className="p-1 p-md-3 p-xl-4 h-100 bg-light-grey" key={poster.id}>
+                                    <Poster poster={poster}/>
+                                </div>)
+                            }
+                        </Slider>
+                    </div>
                 </PosterDescriptionProvider>
 
             </MainColoredSection>

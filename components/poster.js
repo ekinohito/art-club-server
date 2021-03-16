@@ -1,5 +1,4 @@
 import React, {useEffect} from 'react';
-import PosterDescription from "./poster_description";
 import {usePosterDescription} from "../context/poster_description";
 
 export default function Poster({poster}) {
@@ -13,13 +12,7 @@ export default function Poster({poster}) {
                 openPD();
             }}
         >
-            <img
-                src={`${poster.iconName}`}
-                width="auto"
-                alt={poster.id}
-                className="img-fluid"
-                style={{borderRadius: '20px'}}
-            />
+            <div style={{backgroundImage: `url(${poster.iconName})`, backgroundSize: "cover", backgroundPosition: "center",borderRadius: '20px', paddingBottom: '150%'}}/>
         </div>
 
 

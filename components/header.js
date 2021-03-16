@@ -8,6 +8,7 @@ export default function Header({animated = true}) {
     const ref = useRef(null);
 
     const scrollHandler = useCallback(() => {
+        if (!ref.current) return
         if (ref.current.offsetHeight + window.pageYOffset > window.innerHeight)
             setTransparent(false)
         else

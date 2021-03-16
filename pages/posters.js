@@ -15,8 +15,8 @@ export default function Posters() {
             <ImageGrid title={"Архив событий"}>
                 <PosterDescriptionProvider>
                     {posters?.map(poster => (
-                    <div className="col-sm-6 col-md-4 col-lg-3 col-12 mt-4">
-                        <Poster poster={poster} key={poster.id}/>
+                    <div key={poster.id} className="col-sm-6 col-md-4 col-lg-3 col-12 mt-4">
+                        <Poster poster={poster}/>
                     </div>
                     )
                 )}

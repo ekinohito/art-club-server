@@ -2,12 +2,12 @@ import React from 'react';
 import {Carousel} from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 
-export default function Slider({children}) {
+export default function Slider({children, centerMode}) {
     return (
         <div
             className="px-0 px-md-5 not-hidden">
             <Carousel
-                centerMode
+                centerMode={centerMode}
                 swipeable
                 emulateTouch
                 swipeScrollTolerance={5}

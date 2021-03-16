@@ -13,9 +13,7 @@ export default function Screen({ image }) {
 					overflow: "hidden"}}>
 					<div className={styles.screenImage}/>
 				</div>
-				<div className={styles.mainLogo}>
-					<img src="/assets/images/logo-main.png"/>
-				</div>	
+				<div className={styles.mainLogo}/>
             </div>
     )
 }
