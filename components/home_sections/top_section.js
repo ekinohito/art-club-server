@@ -24,7 +24,7 @@ export default function TopSection({children}) {
 
 
                 </div>
-                <a href="#poster">
+                <a href="#poster-section">
                     <img src="/assets/icons/arrow_down.png" alt="arrow" className={styles.arrow} width={50}/>
                 </a>
 

@@ -5,11 +5,13 @@ import {useGetPosters} from "../../hooks/requests/usePosters";
 import MainColoredSection from "../../containers/main_colored_section";
 import Link from "next/link";
 import {PosterDescriptionProvider} from "../../context/poster_description";
+import Anchor from "../anchor";
 
 export default function PosterSection(props) {
     const {posters, error} = useGetPosters(props.posters);
     return (
         <div id="poster">
+            <Anchor id="poster-section"/>
             <MainColoredSection bgClass="bg-light-grey">
                 <div className="d-flex justify-content-between mb-4">
                     <span className="h3-text">

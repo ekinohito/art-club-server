@@ -6,11 +6,11 @@ import {animated, config, useSpring} from "react-spring";
 
 const sections = [
     {name: "Главная", href: "/#"},
-    {name: "Афиша", href: "/#poster"},
-    {name: "Чем мы занимаемся?", href: "/#competence"},
-    {name: "Резиденты", href: "/#resident"},
-    {name: "Галерея", href: "/#gallery"},
-    {name: "Контакты", href: "/#contacts"},
+    {name: "Афиша", href: "/#poster-section"},
+    {name: "Чем мы занимаемся?", href: "/#competence-section"},
+    {name: "Резиденты", href: "/#resident-section"},
+    {name: "Галерея", href: "/#gallery-section"},
+    {name: "Контакты", href: "/#contacts-section"},
     {name: "О нас!", href: "/about#"}
 ]
 

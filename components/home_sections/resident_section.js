@@ -5,12 +5,14 @@ import {useGetResidents} from "../../hooks/requests/useResidents";
 import MainColoredSection from "../../containers/main_colored_section";
 import Poster from "../poster";
 import {PosterDescriptionProvider} from "../../context/poster_description";
+import Anchor from "../anchor";
 
 export default function ResidentSection(props) {
     const {residents, error} = useGetResidents(props.residents);
 
     return (
         <div id="resident">
+            <Anchor id="resident-section"/>
             <MainColoredSection bgClass="bg-light-grey">
                 <span className="h2-text-lg h3-text text-center mb-4">
                     Наши резиденты

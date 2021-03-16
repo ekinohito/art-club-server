@@ -2,11 +2,13 @@ import React from 'react';
 import Partner from "../partner";
 import MainColoredSection from "../../containers/main_colored_section";
 import {useGetPartners} from "../../hooks/requests/usePartners";
+import Anchor from "../anchor";
 
 export default function PartnersSection(props) {
     const {partners, error} = useGetPartners(props.partners);
     return (
         <div id="partner">
+            <Anchor id="partner-section"/>
             <MainColoredSection bgClass="bg-gradient">
                 <span className="h2-text-lg h3-text text-white text-center mb1">
                 Наши друзья

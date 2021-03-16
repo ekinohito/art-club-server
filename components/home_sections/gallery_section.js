@@ -3,11 +3,13 @@ import GalleryPreview from "../gallery_preview";
 import {useGetPreviews} from "../../hooks/requests/usePreviews";
 import MainColoredSection from "../../containers/main_colored_section";
 import Link from "next/link";
+import Anchor from "../anchor";
 
 export default function GallerySection(props) {
     const {previews, error} = useGetPreviews()
     return (
         <div id="gallery">
+            <Anchor id="gallery-section"/>
             <MainColoredSection bgClass="bg-light-grey">
                 <div className="d-flex justify-content-between">
                     <span className="h2-text-lg h3-text text-black">

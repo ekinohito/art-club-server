@@ -1,12 +1,14 @@
 import React from 'react';
 import {useGetCompetence} from "../../hooks/requests/useCompetence";
 import MainColoredSection from "../../containers/main_colored_section";
+import Anchor from "../anchor";
 
 
 export default function CompetenceSection(props) {
     const {competence, error} = useGetCompetence(props.competence);
     return (
         <div id="competence">
+            <Anchor id="competence-section"/>
             <MainColoredSection bgClass="bg-gradient">
                 <span className="h2-text-lg h3-text text-white text-center">
                     Чем мы занимаемся?

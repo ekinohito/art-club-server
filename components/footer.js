@@ -1,11 +1,13 @@
 import React from 'react';
 import styles from './Footer.module.scss';
+import Anchor from "./anchor";
 
 
 export default function Footer() {
     return (
 
         <div className="bg-dark-purple py-5" id="contacts">
+            <Anchor id="contacts-section"/>
             <div className="container d-flex flex-column">
                 <span className="text-center text-white h1-text-lg h2-text mb-5">
                     Контакты
