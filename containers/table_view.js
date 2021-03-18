@@ -18,7 +18,7 @@ export default function TableView({children, api, mutate, symbols=30}) {
         await mutate()
     }
     return (
-        <div className="mb-5">
+        <div className="mt-2 mb-5">
             <table className="table table-striped">
                 <thead>
                     <tr>

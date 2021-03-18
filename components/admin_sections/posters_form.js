@@ -10,7 +10,7 @@ export default function PostersForm() {
     let [file, setFile] = useState(null)
     let { posters, mutate } = useGetPosters()
     return <>
-        <h3>Posters</h3>
+        <h3>Афиши</h3>
         <Formik
             initialValues={{
                 name: '',

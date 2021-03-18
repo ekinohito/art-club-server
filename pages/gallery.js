@@ -4,11 +4,12 @@ import Header from "../components/header";
 import {useGetPreviews} from "../hooks/requests/usePreviews";
 import GalleryPreview from "../components/gallery_preview";
 import ImageGrid from "../containers/image_grid";
+import Page from "../containers/page";
 
 export default function Gallery() {
     const {previews, error} = useGetPreviews()
     return (
-        <div className="d-flex flex-column overflow-hidden">
+        <Page>
             <Header animated={false}/>
             <ImageGrid title="Фотогалерея">{
                 previews?.map((value, index, array) =>
@@ -17,6 +18,6 @@ export default function Gallery() {
             }
             </ImageGrid>
             <Footer/>
-        </div>
+        </Page>
     )
 }

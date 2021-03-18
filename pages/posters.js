@@ -5,12 +5,13 @@ import ImageGrid from "../containers/image_grid";
 import Poster from "../components/poster";
 import Footer from "../components/footer";
 import { PosterDescriptionProvider } from '../context/poster_description';
+import Page from "../containers/page";
 
 export default function Posters() {
     const {posters, error} = useGetPosters();
 
     return (
-        <div className="d-flex flex-column overflow-hidden">
+        <Page>
             <Header animated={false}/>
             <ImageGrid title={"Архив событий"}>
                 <PosterDescriptionProvider>
@@ -23,6 +24,6 @@ export default function Posters() {
                 </PosterDescriptionProvider>
             </ImageGrid>
             <Footer/>
-        </div>
+        </Page>
     )
 }
