@@ -2,6 +2,7 @@ import {Field, Form, Formik} from "formik";
 import React, {useState} from "react";
 import uploader from "../../utils/uploader";
 import FileUpload from "../file_upload";
+import InputString from "../input_string";
 
 export default function RegistrationForm() {
     return <>
@@ -22,11 +23,9 @@ export default function RegistrationForm() {
             }}
         >
             <Form>
-                <label htmlFor="username">Username</label>
-                <Field id="username" name="username" placeholder="John" />
-                <label htmlFor="password">Password</label>
-                <Field id="password" name="password" placeholder="qwerty" />
-                <button type="submit">Submit</button>
+                <InputString name="username" placeholder="username"/>
+                <InputString name="password" placeholder="password"/>
+                <button className="btn btn-primary" type="submit">Submit</button>
             </Form>
         </Formik>
     </>

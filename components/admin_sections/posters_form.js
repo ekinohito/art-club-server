@@ -4,6 +4,7 @@ import uploader from "../../utils/uploader";
 import FileUpload from "../file_upload";
 import TableView from "../../containers/table_view";
 import {useGetPosters} from "../../hooks/requests/usePosters";
+import InputString from "../input_string";
 
 export default function PostersForm() {
     let [file, setFile] = useState(null)
@@ -29,14 +30,12 @@ export default function PostersForm() {
             }}
         >
             <Form>
-                <label htmlFor="name">Name</label>
-                <Field id="name" name="name" placeholder="Jane" />
-                <label htmlFor="date">Date</label>
-                <Field id="date" name="date" placeholder="Doe" />
-                <label htmlFor="description">Description</label>
-                <Field id="description" name="description" placeholder="Doe" />
+
+                <InputString name="name" placeholder="Название мероприятия"/>
+                <InputString name="date" placeholder="Дата мероприятия"/>
+                <InputString name="description" placeholder="Описание мероприятия"/>
                 <FileUpload setFile={setFile}/>
-                <button type="submit">Submit</button>
+                <button className="btn btn-primary" type="submit">Submit</button>
             </Form>
         </Formik>
         <TableView api="/api/data/posters" mutate={mutate}>{posters}</TableView>

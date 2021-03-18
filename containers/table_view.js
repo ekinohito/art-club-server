@@ -19,18 +19,24 @@ export default function TableView({children, api, mutate, symbols=30}) {
     }
     return (
         <div className="mb-5">
-            <table>
-                <tr>
-                    {keys.map((value, index) => <th className="px-2" key={index}>{value}</th>)}
-                </tr>
+            <table className="table table-striped">
+                <thead>
+                    <tr>
+                        {keys.map((value, index) => <th className="px-2" key={index}>{value}</th>)}
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
                 {
                     children.map((child, index) => <tr key={index}>
                         {keys.map((value, index) => <td className="px-2" title={child[value]} key={index}>
                             {truncateString(child[value].toString(), symbols)}
                         </td>)}
-                        <td onClick={async () => await deleteRow(child.id)}>DELETE</td>
+                        <td onClick={async () => await deleteRow(child.id)}><button className="btn btn-outline-danger btn-sm">DELETE</button></td>
                     </tr>)
                 }
+                </tbody>
+
             </table>
         </div>
     )

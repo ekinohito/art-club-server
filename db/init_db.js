@@ -26,6 +26,6 @@ db.ready.then(() => {
         (err, data) => JSON.parse(data.toString()).forEach(item => db.insertPosters(item)))
 
     db.deleteUsers()
-    bcrypt.hash('admin', +process.env.SALT_ROUNDS)
+    bcrypt.hash(process.env.ADMIN_PASSWORD, +process.env.SALT_ROUNDS)
         .then((value) => db.insertUsers({name: 'admin', role: 'admin', pwdHash: value }))
 })

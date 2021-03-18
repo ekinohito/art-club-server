@@ -1,10 +1,12 @@
 import React from 'react';
 
 export default function FileUpload({setFile}) {
-    return <>
-        <label htmlFor="file">Image</label>
-        <input id="file" name="file" type="file" onChange={(event) => {
-            setFile(event.currentTarget.files[0]);
-        }}/>
-    </>
+    return <div className="input-group mb-3">
+        <div className="custom-file">
+            <input id="file" name="file" type="file" className="custom-file-input" onChange={(event) => {
+                setFile(event.currentTarget.files[0]);
+            }}/>
+            <label className="custom-file-label" htmlFor="file">Choose file</label>
+        </div>
+    </div>
 }

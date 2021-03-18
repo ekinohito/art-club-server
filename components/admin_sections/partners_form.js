@@ -5,12 +5,13 @@ import FileUpload from "../file_upload";
 import {useGetPartners} from "../../hooks/requests/usePartners";
 import Partner from "../partner";
 import TableView from "../../containers/table_view";
+import InputString from "../input_string";
 
 export default function PartnersForm() {
     let [file, setFile] = useState(null)
     let { partners, mutate } = useGetPartners()
     return <>
-        <h3>Partners</h3>
+        <h3>Наши друзья</h3>
         <Formik
             initialValues={{
                 title: '',
@@ -29,12 +30,10 @@ export default function PartnersForm() {
             }}
         >
             <Form>
-                <label htmlFor="title">Title</label>
-                <Field id="title" name="title" placeholder="Jane" />
-                <label htmlFor="link">Link</label>
-                <Field id="link" name="link" placeholder="Doe" />
+                <InputString name="title" placeholder="Подпись"/>
+                <InputString name="link" placeholder="Ссылка на партнера"/>
                 <FileUpload setFile={setFile}/>
-                <button type="submit">Submit</button>
+                <button className="btn btn-primary" type="submit">Submit</button>
             </Form>
         </Formik>
         <TableView api="/api/data/partners" mutate={mutate}>{partners}</TableView>

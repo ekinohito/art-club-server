@@ -2,11 +2,12 @@ import {Field, Form, Formik} from "formik";
 import React from "react";
 import {useGetQuotes} from "../../hooks/requests/useQuotes";
 import TableView from "../../containers/table_view";
+import InputString from "../input_string";
 
 export default function QuotesForm() {
     let { quotes, mutate } = useGetQuotes()
     return <>
-        <h3>Quotes</h3>
+        <h3>Цитаты</h3>
         <Formik
             initialValues={{
                 text: '',
@@ -23,9 +24,8 @@ export default function QuotesForm() {
             }}
         >
             <Form>
-                <label htmlFor="text">Text</label>
-                <Field id="text" name="text" placeholder="ya s'yel deda" />
-                <button type="submit">Submit</button>
+                <InputString name="text" placeholder="Текст цитаты"/>
+                <button className="btn btn-primary" type="submit">Submit</button>
             </Form>
         </Formik>
         <TableView symbols={100} api="/api/data/quotes" mutate={mutate}>{quotes}</TableView>
