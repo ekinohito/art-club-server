@@ -9,7 +9,7 @@ const util = require("util");
 const DEBUG = false;
 
 let db = new sqlite3.Database('./db.db');
-let closure =
+let dbMethod =
     (method) =>
         (sql, order) =>
             (params) => {
@@ -18,9 +18,9 @@ let closure =
                     db[method](...args))(sql, (order)?order.map(value => params[value]):undefined)
             }
 
-let run = closure("run")
-let get = closure("get")
-let all = closure("all")
+let run = dbMethod("run")
+let get = dbMethod("get")
+let all = dbMethod("all")
 
 module.exports = {
     createQuotes: run(quotes.createQuotesSQL),
