@@ -7,16 +7,15 @@ const posters = require('./sql/posters');
 const users = require('./sql/users');
 
 let db = new sqlite3.Database('./db.db');
-let ready = Promise.allSettled([
-    new Promise(resolve => db.run(quotes.createQuotesSQL, err => {resolve()})),
-    new Promise(resolve => db.run(partners.createPartnersSQL, err => {resolve()})),
-    new Promise(resolve => db.run(previews.createPreviewsSQL, err => {resolve()})),
-    new Promise(resolve => db.run(residents.createResidentsSQL, err => {resolve()})),
-    new Promise(resolve => db.run(posters.createPostersSQL, err => {resolve()})),
-    new Promise(resolve => db.run(users.createUsersSQL, err => {resolve()}))])
 
 module.exports = {
-    ready,
+    createQuotes: () => new Promise(resolve => db.run(quotes.createQuotesSQL, err => {resolve()})),
+    createPartners: () => new Promise(resolve => db.run(partners.createPartnersSQL, err => {resolve()})),
+    createPreviews: () => new Promise(resolve => db.run(previews.createPreviewsSQL, err => {resolve()})),
+    createResidents: () => new Promise(resolve => db.run(residents.createResidentsSQL, err => {resolve()})),
+    createPosters: () => new Promise(resolve => db.run(posters.createPostersSQL, err => {resolve()})),
+    createUsers: () => new Promise(resolve => db.run(users.createUsersSQL, err => {resolve()})),
+
 
     deleteQuotes: () => db.run(quotes.deleteQuotesSQL),
     deleteOneQuotes: (quote) => db.run(quotes.deleteOnePartnersSQL, [quote.id]),

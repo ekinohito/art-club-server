@@ -4,7 +4,14 @@ const path = require('path')
 const bcrypt = require('bcrypt');
 require('dotenv').config({path: '.env.local'});
 
-db.ready.then(() => {
+(async () => {
+    await db.createQuotes();
+    await db.createPartners();
+    await db.createPreviews();
+    await db.createResidents();
+    await db.createPosters();
+    await db.createUsers();
+})().then(() => {
     db.deleteQuotes()
     fs.readFile(path.join(__dirname, '../data/quotes.json'),
         (err, data) => JSON.parse(data.toString()).forEach(item => db.insertQuotes(item)))
