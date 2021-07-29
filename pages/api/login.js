@@ -10,7 +10,7 @@ export default async (req, res) => {
     }
 
     const {username, password} = JSON.parse(req.body);
-    let user = await db.findUsers(username)
+    let user = await db.findUsers({"name": username})
 
     if (user && await bcrypt.compare(password, user.user_pwd_hash)) {
         const cookies = new Cookies(req, res)
@@ -21,5 +21,6 @@ export default async (req, res) => {
         res.status(200).json({success: true})
         return
     }
+    console.log("bruh" + user)
     res.status(401).json({success: false});
 }
