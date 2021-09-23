@@ -3,7 +3,7 @@ const fs = require('fs')
 const path = require('path')
 const bcrypt = require('bcrypt');
 const util = require("util");
-
+require('dotenv').config({path: '.env.local'});
 
 const readFile = util.promisify(fs.readFile);
 async function initializeTable(create, clear, insert, filename) {
