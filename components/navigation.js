@@ -11,7 +11,7 @@ const sections = [
     {name: "Резиденты", href: "/#resident-section"},
     {name: "Галерея", href: "/#gallery-section"},
     {name: "Контакты", href: "/#contacts-section"},
-    {name: "О нас!", href: "/about#"}
+    //{name: "О нас!", href: "/about#"}
 ]
 
 

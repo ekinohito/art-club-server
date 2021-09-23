@@ -37,10 +37,8 @@ const AdminLayout = () => {
                             <LoginForm/>
                             <RegistrationForm/>
                         </>
-
                 }
             </div>
-
         </Page>
     )
 }
