@@ -28,8 +28,7 @@ export default function QuoteSection({timeout = 5000, ...props}) {
                 {transitions(({opacity, position, left}, item) =>
                     <animated.div
                         key={item}
-                        style={{opacity: opacity, position, left}}
-                    >
+                        style={{opacity: opacity, position, left}}>
                         <div className="h2-text-lg h3-text text-white py-5 text-center" style={{lineHeight: "125%"}}>
                             "{quotes ? quotes[item]?.text: null}"
                         </div>
