@@ -10,7 +10,7 @@ export default function QuoteSection({timeout = 5000, ...props}) {
     const transitions = useTransition(k, {
         from: {opacity: 0, top: 0},
         enter: {opacity: 1, top: 0},
-        leave: {position: "absolute", top: 0, opacity: 0},
+        leave: {position: "absolute", left: 9999, opacity: 0},
         config: config.molasses,
     })
 
