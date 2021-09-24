@@ -24,7 +24,7 @@ export default function QuoteSection({timeout = 5000, ...props}) {
 
     return (
         <MainColoredSection bgClass="bg-concert-photo">
-            <div className="d-flex flex-row flex-nowrap">
+            <div className="position-relative">
                 {transitions(({opacity, position, left}, item) =>
                     <animated.div
                         key={item}
