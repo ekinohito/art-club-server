@@ -10,17 +10,17 @@ const ScrollLocker = () => {
 
 export default function Modal({children, show, closeModal}) {
 
-    const transitions = useTransition(show, null, {
+    const transitions = useTransition(show,{
         from: {opacity: 0},
         enter: {opacity: 1},
-        leave: {opacity: 1}
+        leave: {opacity: 0}
     })
 
     return (
-        transitions.map(({item, props, key}) =>
+        transitions(({opacity}, item) =>
             item &&
             <Portal>
-                <animated.div className="fixed-top h-100 bg-modal" style={props}>
+                <animated.div className="fixed-top h-100 bg-modal" style={{opacity}}>
                     <div className="container h-100">
                         {children}
                     </div>
