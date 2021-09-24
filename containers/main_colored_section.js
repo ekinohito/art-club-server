@@ -1,8 +1,8 @@
 import React from 'react';
 
-export default function MainColoredSection({bgClass, children}) {
+export default function MainColoredSection({bgClass, children, style}) {
     return (
-        <div className={`py-5 ${bgClass}`} style={{"--bs-gradient": 'url("assets/images/gradient.jpg")'}}>
+        <div className={`py-5 ${bgClass}`} style={style}>
             <div className="d-flex flex-column container">
                 {children}
             </div>

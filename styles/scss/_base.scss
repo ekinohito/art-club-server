@@ -14,13 +14,13 @@
 
 .bg-gradient {
   backdrop-filter: blur(3px);
-  background: url("/assets/images/gradient.jpg");
+  background: url(/assets/images/gradient.jpg);
   @include parallax-bg()
 }
 
 .bg-concert-photo {
   backdrop-filter: blur(3px);
-  background: url("/assets/images/concert.jpg");
+  background: url(/assets/images/concert.jpg);
   @include parallax-bg()
 }
 

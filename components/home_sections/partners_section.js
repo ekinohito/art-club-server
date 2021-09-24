@@ -9,7 +9,11 @@ export default function PartnersSection(props) {
     return (
         <div id="partner">
             <Anchor id="partner-section"/>
-            <MainColoredSection bgClass="bg-gradient">
+            <MainColoredSection bgClass="" style={{backgroundImage: "url(\"assets/images/gradient.jpg\")",
+                backgroundAttachment: "fixed",
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+                backgroundSize: "cover"}}>
                 <span className="h2-text-lg h3-text text-white text-center mb1">
                 Наши друзья
                 </span>
