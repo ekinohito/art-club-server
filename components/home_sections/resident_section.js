@@ -14,7 +14,7 @@ export default function ResidentSection(props) {
         <div id="resident">
             <Anchor id="resident-section"/>
             <MainColoredSection bgClass="bg-light-grey">
-                <span className="h2-text-lg h3-text text-center mb-4">
+                <span className="h2-text-lg h3-text text-center mb-4 gradient-text">
                     Наши резиденты
                 </span>
                 <div className="d-none d-lg-block">

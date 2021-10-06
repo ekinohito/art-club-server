@@ -129,9 +129,7 @@
 
 // Boxes
 
-.gradient-button {
-  @include main-button();
-  color: $main-white;
+@mixin cool-gradient {
   background: linear-gradient(90deg, #C13344 0%, #8F1675 54.59%, #7E2ECF 87.57%);
   background-size: 400% 400%;
   animation: gradient 7s ease infinite;
@@ -149,6 +147,36 @@
   &:hover {
     animation-duration: 2s;
   }
+}
+
+.gradient-button {
+  @include main-button();
+  @include cool-gradient();
+  color: $main-white;
+}
+
+.outline-gradient-button {
+  border-radius: 19px;
+  background-image: linear-gradient(90deg, #C13344 0%, #8F1675 54.59%, #7E2ECF 87.57%);
+  padding: 3px;
+  width: 226px;
+  height: 48px;
+  cursor: pointer;
+  div {
+    background-color: white;
+    border-radius: 16px;
+    width: 100%;
+    height: 100%
+  }
+}
+
+.gradient-text {
+  @include cool-gradient();
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-background-clip: text;
+  -moz-text-fill-color: transparent;
+  color: transparent;
 }
 
 

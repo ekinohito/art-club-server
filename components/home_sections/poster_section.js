@@ -6,6 +6,7 @@ import MainColoredSection from "../../containers/main_colored_section";
 import Link from "next/link";
 import {PosterDescriptionProvider} from "../../context/poster_description";
 import Anchor from "../anchor";
+import OutlineGradientButton from "../OutlineGradientButton";
 
 export default function PosterSection(props) {
     const {posters, error} = useGetPosters(props.posters);
@@ -13,17 +14,9 @@ export default function PosterSection(props) {
         <div id="poster">
             <Anchor id="poster-section"/>
             <MainColoredSection bgClass="bg-light-grey">
-                <div className="d-flex justify-content-between mb-4">
-                    <span className="h3-text">
-                        Афиша
-                    </span>
-                    <Link href="/posters">
-                        <button className="gradient-button">
-                            Посмотреть все
-                        </button>
-                    </Link>
-
-                </div>
+                <span className="h2-text-lg h3-text text-center gradient-text">
+                    Афиша
+                </span>
                 <PosterDescriptionProvider>
                     <div className="d-none d-lg-block">
                         <Slider centerMode>
@@ -44,7 +37,9 @@ export default function PosterSection(props) {
                         </Slider>
                     </div>
                 </PosterDescriptionProvider>
-
+                <OutlineGradientButton href={"/posters"}>
+                    Посмотреть все
+                </OutlineGradientButton>
             </MainColoredSection>
         </div>
     )
