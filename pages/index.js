@@ -16,7 +16,7 @@ export default function Home(props) {
             <Header/>
             <TopSection>
                 <video
-                    src="/assets/webm/animated-bg.webm"
+                    src="/assets/webm/animated-bg.mp4"
                     autoPlay
                     loop
                     muted
