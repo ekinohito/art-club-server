@@ -6,7 +6,8 @@ module.exports = {
             poster_name TEXT NOT NULL,
             poster_icon_name TEXT NOT NULL,
             poster_date TEXT,
-            poster_description TEXT
+            poster_description TEXT,
+            timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
         )
     `,
     deletePostersSQL: `
@@ -19,6 +20,6 @@ module.exports = {
         INSERT INTO posters(poster_name, poster_icon_name, poster_date, poster_description) VALUES (?, ?, ?, ?) 
     `,
     selectPostersSQL: `
-        SELECT * FROM posters
+        SELECT * FROM posters ORDER BY timestamp DESC
     `
 }

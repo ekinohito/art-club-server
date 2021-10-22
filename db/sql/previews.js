@@ -5,7 +5,8 @@ module.exports = {
             preview_id INTEGER PRIMARY KEY,
             preview_text TEXT NOT NULL,
             preview_preview TEXT NOT NULL,
-            preview_link TEXT
+            preview_link TEXT,
+            timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
         )
     `,
     deletePreviewsSQL: `
@@ -18,6 +19,6 @@ module.exports = {
         INSERT INTO previews(preview_text, preview_preview, preview_link) VALUES (?, ?, ?) 
     `,
     selectPreviewsSQL: `
-        SELECT * FROM previews
+        SELECT * FROM previews ORDER BY timestamp DESC
     `
 }

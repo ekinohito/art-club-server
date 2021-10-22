@@ -5,7 +5,8 @@ module.exports = {
             resident_id INTEGER PRIMARY KEY,
             resident_name TEXT NOT NULL,
             resident_icon_name TEXT NOT NULL,
-            resident_href TEXT
+            resident_href TEXT,
+            timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
         )
     `,
     deleteResidentsSQL: `
@@ -18,6 +19,6 @@ module.exports = {
         INSERT INTO residents(resident_name, resident_icon_name, resident_href) VALUES (?, ?, ?) 
     `,
     selectResidentsSQL: `
-        SELECT * FROM residents
+        SELECT * FROM residents ORDER BY timestamp DESC
     `
 }

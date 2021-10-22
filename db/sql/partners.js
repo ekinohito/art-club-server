@@ -5,7 +5,8 @@ module.exports = {
             partner_id INTEGER PRIMARY KEY,
             partner_title TEXT NOT NULL,
             partner_image TEXT NOT NULL,
-            partner_link TEXT
+            partner_link TEXT,
+            timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
         )
     `,
     deletePartnersSQL: `
@@ -18,7 +19,7 @@ module.exports = {
         INSERT INTO partners(partner_title, partner_image, partner_link) VALUES (?, ?, ?) 
     `,
     selectPartnersSQL: `
-        SELECT * FROM partners
+        SELECT * FROM partners ORDER BY timestamp DESC 
     `
 }
 

@@ -3,7 +3,8 @@ module.exports = {
         CREATE TABLE IF NOT EXISTS quotes
         (
             quote_id INTEGER PRIMARY KEY,
-            quote_text TEXT NOT NULL
+            quote_text TEXT NOT NULL,
+            timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
         )
     `,
     deleteQuotesSQL: `
@@ -16,6 +17,6 @@ module.exports = {
         INSERT INTO quotes(quote_text) VALUES (?) 
     `,
     selectQuotesSQL: `
-        SELECT * FROM quotes
+        SELECT * FROM quotes ORDER BY timestamp DESC
     `
 }

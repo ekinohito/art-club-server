@@ -5,7 +5,8 @@ module.exports = {
             user_id INTEGER PRIMARY KEY,
             user_name TEXT NOT NULL UNIQUE,
             user_pwd_hash TEXT NOT NULL,
-            user_role TEXT DEFAULT 'normal'
+            user_role TEXT DEFAULT 'normal',
+            timestamp DATETIME DEFAULT CURRENT_TIMESTAMP
         )
     `,
     deleteUsersSQL: `
@@ -15,7 +16,7 @@ module.exports = {
         INSERT INTO users(user_name, user_pwd_hash, user_role) VALUES (?, ?, ?) 
     `,
     selectUsersSQL: `
-        SELECT * FROM users
+        SELECT * FROM users ORDER BY timestamp DESC
     `,
     findUsersSQL: `
         SELECT * FROM users WHERE user_name = ?
