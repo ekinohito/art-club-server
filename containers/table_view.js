@@ -6,6 +6,7 @@ const truncateString = (str, symbols) => (str.length < (symbols + 3))?str:(str.s
 
 export default function TableView({children, api, mutate, symbols=30}) {
     if (!children) return <></>
+    if (!children[0]) return <></>
     const keys = Object.keys(children[0])
     const deleteRow = async (id) => {
         let response = await fetch(api, {
